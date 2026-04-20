@@ -1,0 +1,11 @@
+body{
+    color: white;
+    background-color: #1a1a1a;
+}
+
+.center-img {
+    display: block;
+    margin: 0 auto;
+    height: 150px;
+    object-fit: cover;
+}
