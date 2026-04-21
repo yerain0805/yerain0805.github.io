@@ -9,3 +9,12 @@ body{
     height: 150px;
     object-fit: cover;
 }
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:visited {
+color:#ffffff;
+    background-color:red;
+}
