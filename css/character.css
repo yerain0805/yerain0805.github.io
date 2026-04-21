@@ -1,6 +1,6 @@
 body{
     color: white;
-    background-color: #1a1a1a;
+    background-color: white;
     text-align: center;
     padding: 20px;
     font-family: "Chiron Sung HK", serif;
@@ -77,4 +77,27 @@ body{
 }
 .character-card img:hover{
     transform: scale(1.1);
+}
+
+.miaoyou-theme {
+    border-color: #8b0000 !important;
+    background-color: #1a1a1a !important;
+}
+
+.miaoyou-theme .name {
+    color: #ff4d4d;
+    border-bottom: 2px solid #ff4d4d;
+}
+
+.miaoyou-theme .detail_title {
+    color: #ff4d4d;
+}
+
+.miaoyou-theme .detail li {
+    border-bottom: 1px solid #4a1a1a;
+}
+
+.miaoyou-theme:hover {
+    box-shadow: 0 0 20px rgba(139, 0, 0, 0.6);
+    transition: box-shadow 0.3s ease-in-out;
 }
