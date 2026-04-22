@@ -1,9 +1,8 @@
 body{
     color: white;
-    background-color: white;
+    background-color:#121212;
     text-align: center;
     padding: 20px;
-    font-family: "Chiron Sung HK", serif;
 }
 
 .container {
@@ -19,11 +18,8 @@ body{
     display: block;
     width: 350px;
     overflow: hidden;
-    border-style: dashed;
-    border-width: 3px;
-    border-color: #26658c;;
-    vertical-align: top;
-    background-color: #253045;
+    border: 3px dashed var(--border-color, #26658c);
+    background-color: var(--card-bg, #253045);
     border-radius: 8px;
     margin: 15px;
     text-align: left;
@@ -36,14 +32,14 @@ body{
 }
 .name{
     font-size: 32px;
-    color: #00c6e6;
+    color: var(--name-color, #00c6e6);
     margin-bottom: 10px;
-    border-bottom: 2px solid #00c6e6;
+    border-bottom: 2px solid var(--name-color, #00c6e6);
     padding-bottom: 15px;
 }
 .profile{
     font-size: 15px;
-    color: #bbb;
+    color: var(--profile-text, #bbb);
     line-height: 1.6;
     min-height: 80px;
     margin-bottom: 20px;
@@ -55,13 +51,13 @@ body{
 }
 .detail li{
     padding: 12px 0;
-    border-bottom: 1px solid #6b94bf;
+    border-bottom: 1px solid var(--list-line, #6b94bf);
     overflow: hidden;
 }
 .detail_title{
     float: left;
     display: inline-block;
-    color: #6b94bf;
+    color: var(--list-title, #6b94bf);
     font-weight: bold;
 }
 .detail_text{
@@ -70,9 +66,6 @@ body{
 }
 .info{
     padding: 20px
-}
-.character-card img{
-    transition: transform 0.3s ease-in-out;
 }
 
 .character-card:hover .card_bg {
@@ -88,29 +81,6 @@ body{
 .card_bg, .card_npc {
     transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1),
     filter 0.6s ease-in-out;
-}
-
-.miaoyou-theme {
-    border-color: #8b0000 !important;
-    background-color: #1a1a1a !important;
-}
-
-.miaoyou-theme .name {
-    color: #ff4d4d;
-    border-bottom: 2px solid #ff4d4d;
-}
-
-.miaoyou-theme .detail_title {
-    color: #ff4d4d;
-}
-
-.miaoyou-theme .detail li {
-    border-bottom: 1px solid #4a1a1a;
-}
-
-.miaoyou-theme:hover {
-    box-shadow: 0 0 20px rgba(139, 0, 0, 0.6);
-    transition: box-shadow 0.3s ease-in-out;
 }
 
 .img-area {
@@ -140,4 +110,18 @@ body{
     object-fit: cover;
     z-index: 5;
     object-position: top center;
+}
+
+.miaoyou-theme {
+    --border-color: #8b0000;
+    --card-bg: #1a1a1a;
+    --name-color: #ff4d4d;
+    --profile-text: #999;
+    --list-line: #4a1a1a;
+    --list-title: #ff4d4d;
+}
+
+.miaoyou-theme:hover {
+    box-shadow: 0 0 20px rgba(139, 0, 0, 0.6);
+    transition: box-shadow 0.3s ease-in-out;
 }
