@@ -83,6 +83,11 @@ body{
     filter 0.6s ease-in-out;
 }
 
+.character-card:hover {
+    box-shadow: 0 0 20px var(--hover-shadow, rgba(0, 198, 230, 0.4));
+    transition: box-shadow 0.3s ease-in-out;
+}
+
 .img-area {
     position: relative;
     width: 100%;
@@ -119,11 +124,7 @@ body{
     --profile-text: #999;
     --list-line: #4a1a1a;
     --list-title: #ff4d4d;
-}
-
-.miaoyou-theme:hover {
-    box-shadow: 0 0 20px rgba(139, 0, 0, 0.6);
-    transition: box-shadow 0.3s ease-in-out;
+    --hover-shadow: rgba(139, 0, 0, 0.6);
 }
 
 .bonnie-theme {
@@ -133,6 +134,7 @@ body{
     --profile-text: #fff0b3;
     --list-line: rgba(255, 153, 102, 0.4);
     --list-title: #80dfff;
+    --hover-shadow: rgba(255, 133, 162, 0.5);
 }
 
 .moan-theme {
@@ -142,4 +144,5 @@ body{
     --profile-text: #d44aa7;
     --list-line: #502168;
     --list-title: #9c57d2;
+    --hover-shadow: rgba(190, 64, 188, 0.5);
 }
