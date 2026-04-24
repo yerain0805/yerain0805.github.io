@@ -134,3 +134,12 @@ body{
     --list-line: rgba(255, 153, 102, 0.4);
     --list-title: #80dfff;
 }
+
+.moan-theme {
+    --border-color: #9d1678;
+    --card-bg: #1a1a1a;
+    --name-color: #be40bc;
+    --profile-text: #d44aa7;
+    --list-line: #502168;
+    --list-title: #9c57d2;
+}
