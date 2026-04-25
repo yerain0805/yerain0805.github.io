@@ -145,10 +145,10 @@ body{
 }
 
 .ye-theme {
-    --border-color: #9d1678;
+    --border-color: #5a9276;
     --name-color: #679c14;
-    --profile-text: #415e16;
+    --profile-text: #49843e;
     --list-line: #1b2c07;
-    --list-title: #9c57d2;
-    --hover-shadow: #375017;
+    --list-title: #6eb461;
+    --hover-shadow: #355545;
 }
