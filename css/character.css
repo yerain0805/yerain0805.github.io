@@ -128,10 +128,10 @@ body{
 
 .bonnie-theme {
     --border-color: #ff85a2;
-    --name-color: #ff4d7d;
-    --profile-text: #fff0b3;
+    --name-color: #ffeab3;
+    --profile-text: #f6beb0;
     --list-line: rgba(255, 153, 102, 0.4);
-    --list-title: #80dfff;
+    --list-title: #86bada;
     --hover-shadow: rgba(255, 133, 162, 0.5);
 }
 
