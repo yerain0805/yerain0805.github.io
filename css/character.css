@@ -19,7 +19,7 @@ body{
     width: 350px;
     overflow: hidden;
     border: 3px dashed var(--border-color, #26658c);
-    background-color: var(--card-bg, #253045);
+    background-color: #1a1a1a;
     border-radius: 8px;
     margin: 15px;
     text-align: left;
@@ -119,7 +119,6 @@ body{
 
 .miaoyou-theme {
     --border-color: #8b0000;
-    --card-bg: #1a1a1a;
     --name-color: #ff4d4d;
     --profile-text: #999;
     --list-line: #4a1a1a;
@@ -129,7 +128,6 @@ body{
 
 .bonnie-theme {
     --border-color: #ff85a2;
-    --card-bg: #1a1a1a;
     --name-color: #ff4d7d;
     --profile-text: #fff0b3;
     --list-line: rgba(255, 153, 102, 0.4);
@@ -139,10 +137,18 @@ body{
 
 .moan-theme {
     --border-color: #9d1678;
-    --card-bg: #1a1a1a;
     --name-color: #be40bc;
     --profile-text: #d44aa7;
     --list-line: #502168;
     --list-title: #9c57d2;
     --hover-shadow: rgba(190, 64, 188, 0.5);
+}
+
+.ye-theme {
+    --border-color: #9d1678;
+    --name-color: #679c14;
+    --profile-text: #415e16;
+    --list-line: #1b2c07;
+    --list-title: #9c57d2;
+    --hover-shadow: #375017;
 }
