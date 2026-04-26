@@ -152,3 +152,12 @@ body{
     --list-title: #6eb461;
     --hover-shadow: #355545;
 }
+
+.yilan-theme {
+    --border-color: #b0bfe5;
+    --name-color: #bdbede;
+    --profile-text: #f9d5e9;
+    --list-line: #535368;
+    --list-title: #7c7d92;
+    --hover-shadow: #535368;
+}
