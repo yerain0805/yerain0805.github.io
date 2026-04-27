@@ -161,3 +161,12 @@ body{
     --list-title: #7c7d92;
     --hover-shadow: #535368;
 }
+
+.xitong-theme {
+    --border-color: #aeefff;
+    --name-color: #6990c8;
+    --profile-text: #3a539f;
+    --list-line: #1f2a3a;
+    --list-title: #5163ae;
+    --hover-shadow: #333d91;
+}
