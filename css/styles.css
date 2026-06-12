@@ -11044,3 +11044,77 @@ html {
 .copyright {
   background-color: #1a252f;
 }
+/* ==========================================================================
+   自訂翡翠色系覆蓋樣式 (Jade Tones Palette)
+   ========================================================================== */
+
+/* 1. 網頁大背景：使用溫柔的燕麥奶色 */
+body {
+  background-color: #efeada !important;
+}
+
+/* 2. 主色調區塊：Header大橫幅、關於我、按鈕等（取代原來的藍綠色） */
+.bg-primary {
+  background-color: #52796c !important; /* 草本綠 Herbal Green */
+}
+.text-primary {
+  color: #52796c !important;
+}
+.btn-primary {
+  background-color: #52796c !important;
+  border-color: #52796c !important;
+}
+/* 按鈕滑鼠滑過去時，變成稍淺的迷霧綠 */
+.btn-primary:hover, .btn-primary:active, .btn-primary:focus {
+  background-color: #819b85 !important;
+  border-color: #819b85 !important;
+}
+
+/* 3. 次色調區塊：導覽列(Nav)、頁尾(Footer)*/
+.bg-secondary {
+  background-color: #3b584b !important; /* 深翡翠綠 */
+}
+.text-secondary {
+  color: #3b584b !important;
+}
+
+/* 4. 分隔線與圖示顏色調整 */
+.divider-custom .divider-custom-line {
+  background-color: #3b584b !important; /* 預設深色分隔線 */
+}
+.divider-custom.divider-light .divider-custom-line {
+  background-color: #efeada !important; /* 亮色區塊上的分隔線 */
+}
+.divider-custom .divider-custom-icon {
+  color: #3b584b !important;
+}
+.divider-custom.divider-light .divider-custom-icon {
+  color: #efeada !important;
+}
+
+/* 5. 聯絡我們按鈕與輸入框外框專用 */
+.form-control:focus {
+  border-color: #819b85 !important;
+  box-shadow: 0 0 0 0.25rem rgba(129, 155, 133, 0.25) !important;
+}
+
+/* 6. 大頭貼下方的職業文字與外框調整 */
+.btn-outline-light {
+  color: #efeada !important;
+  border-color: #efeada !important;
+}
+.btn-outline-light:hover {
+  background-color: #efeada !important;
+  color: #52796c !important;
+}
+footer.footer {
+  background-color: #3b584b !important; /* 改為深翡翠綠 */
+  color: #efeada !important;             /* 文字改為溫柔的燕麥奶色 */
+}
+.copyright {
+  background-color: #2d4339 !important; /* 使用比深翡翠綠更深一點的墨綠色，讓層次更好看 */
+  color: #efeada !important;            /* 版權宣告文字改為燕麥奶色 */
+}
+.portfolio-item .portfolio-item-caption {
+  background-color: rgba(82, 121, 108, 0.9) !important; /* 使用 #52796c 的 RGB 形式並加上 0.9 透明度 */
+}
