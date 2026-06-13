@@ -11118,3 +11118,82 @@ footer.footer {
 .portfolio-item .portfolio-item-caption {
   background-color: rgba(82, 121, 108, 0.9) !important; /* 使用 #52796c 的 RGB 形式並加上 0.9 透明度 */
 }
+/* ==========================================================================
+   全新優化：多組相簿輪播牆自訂樣式（固定高度、寬度自適應）
+   ========================================================================== */
+
+/* 1. 輪播卡片外殼與間距調整 */
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;   /* 確保卡片內容不論多寡，都精準水平垂直居中 */
+  height: auto;
+}
+
+.gallery-item-wrapper {
+  background-color: transparent;
+  padding: 10px;
+  width: 100%;
+  max-width: 360px; /* 限制單個卡片的最大寬度，畫面更精緻 */
+}
+
+/* 2. 圖片外框：核心修改（固定高度、水平置中） */
+.gallery-item {
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 0.5rem;      /* 微圓角 */
+  background-color: #f5f2e9;  /* 給大圖一個淡淡的燕麥奶底色襯托 */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+
+  /* 核心：固定外框高度 */
+  height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 3. 圖片本身：寬度隨高度自動等比例縮放，絕不變形 */
+.gallery-item img {
+  height: 100%;
+  width: auto;
+  object-fit: contain; /* 確保整張超大圖片都能完整縮放進框框裡，不被裁切 */
+  transition: transform 0.3s ease;
+}
+
+/* 滑鼠懸停時的微放大特效 */
+.gallery-item:hover img {
+  transform: scale(1.03);
+}
+
+/* 4. 卡片下方的文字資訊 */
+.work-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #3b584b; /* 深翡翠綠 */
+  margin-bottom: 4px;
+}
+.work-category {
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+}
+
+/* 5. 輪播分頁圓點樣式微調（同步翡翠色系） */
+.swiper-pagination-digital .swiper-pagination-bullet,
+.swiper-pagination-sketch .swiper-pagination-bullet {
+  background: #c3c0aa !important; /* 未選中：沙橄欖綠 */
+  opacity: 0.6;
+  width: 9px;
+  height: 9px;
+  margin: 0 5px !important;
+  display: inline-block;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.swiper-pagination-digital .swiper-pagination-bullet-active,
+.swiper-pagination-sketch .swiper-pagination-bullet-active {
+  background: #3b584b !important; /* 已選中：深翡翠綠 */
+  opacity: 1;
+  transform: scale(1.2);
+}
