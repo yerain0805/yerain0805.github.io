@@ -11092,13 +11092,7 @@ body {
   color: #efeada !important;
 }
 
-/* 5. 聯絡我們按鈕與輸入框外框專用 */
-.form-control:focus {
-  border-color: #819b85 !important;
-  box-shadow: 0 0 0 0.25rem rgba(129, 155, 133, 0.25) !important;
-}
-
-/* 6. 大頭貼下方的職業文字與外框調整 */
+/* 5. 大頭貼下方的職業文字與外框調整 */
 .btn-outline-light {
   color: #efeada !important;
   border-color: #efeada !important;
@@ -11121,7 +11115,6 @@ footer.footer {
 /* ==========================================================================
    全新優化：多組相簿輪播牆自訂樣式（固定高度、寬度自適應）
    ========================================================================== */
-
 /* 1. 輪播卡片外殼與間距調整 */
 .swiper-slide {
   display: flex;
@@ -11196,4 +11189,16 @@ footer.footer {
   background: #3b584b !important; /* 已選中：深翡翠綠 */
   opacity: 1;
   transform: scale(1.2);
+}
+/* ==================== 導覽列右上角目錄按鈕自訂顏色 ==================== */
+/* 1. 修改「當前選中/當前頁面」按鈕的背景顏色（例如：目前的 OC角色 按鈕） */
+#mainNav .navbar-nav .nav-item .nav-link.active,
+#mainNav .navbar-nav .nav-item .nav-link:focus {
+    background-color: #52796c !important; /* 這裡換成你想設定的綠色（例如：翡翠色中調 #52796c） */
+    color: #efeada !important;            /* 按鈕內的文字顏色，改為優雅的燕麥奶白 */
+}
+
+/* 2. 修改「平常沒選中」的其他按鈕文字顏色（其他作品、關於、聯絡） */
+#mainNav .navbar-nav .nav-item .nav-link {
+    color: #efeada !important;            /* 平常沒選中時的文字顏色 */
 }
