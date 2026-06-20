@@ -147,3 +147,312 @@ body {
     color: var(--bg-dark);
     box-shadow: 0 0 20px rgba(239, 234, 218, 0.4);
 }
+
+:root {
+    --sca-bg: #121212; /* 杜絕純白的暗夜底色 */
+    --card-bg: #1e1e1e;
+    --morandi-gray: #7e8c8d; /* 專屬莫蘭迪灰器材色調 */
+    --vesper-red: #8b0000;
+    --miaoyou-orange: #ff6700;
+    --mufeng-gold: #d4af37;
+    --bonnie-pink: #ffb6c1;
+    --moan-purple: #9370db;
+}
+
+body {
+    background-color: var(--sca-bg);
+    color: #e0e0e0;
+    font-family: 'PingFang TC', sans-serif;
+}
+
+.sca-system-container {
+    width: 100%;
+    max-width: 100%;
+    margin: 15px 0;
+    border: 1px solid var(--morandi-gray);
+    border-radius: 8px;
+    background: #161616;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+    overflow: hidden;
+}
+
+/* 跑馬燈公告 */
+.sca-announcement {
+    background: #2a1b1b;
+    border-bottom: 1px solid var(--vesper-red);
+    padding: 8px;
+    overflow: hidden;
+}
+.ticker-text {
+    white-space: nowrap;
+    animation: ticker 25s linear infinite;
+    color: #ff6b6b;
+    font-size: 0.9rem;
+}
+@keyframes ticker {
+    0% { transform: translate3d(100%, 0, 0); }
+    100% { transform: translate3d(-100%, 0, 0); }
+}
+
+/* 留言卡片片區 */
+.post-card {
+    background: var(--card-bg);
+    border: 1px solid #2c2c2c;
+    border-left: 4px solid var(--morandi-gray);
+    margin: 15px;
+    padding: 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.2s, var(--hover-shadow) 0.3s; /* 使用你設定的 hover 特效 */
+}
+.post-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--mufeng-gold);
+    box-shadow: 0 4px 12px rgba(212, 169, 55, 0.2);
+    --hover-shadow: 0 4px 15px rgba(214, 175, 55, 0.25); /* 補上變數 */
+    transition: transform 0.2s, box-shadow 0.3s, border-color 0.3s;
+}
+
+/* 核心吐槽對話框樣式 */
+.complaint-box {
+    margin-top: 10px;
+    display: none; /* 預設先隱藏，點擊後再由 JS 改為 flex */
+    flex-direction: column;
+    gap: 8px;
+}
+
+.bubble {
+    padding: 10px 14px;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    max-width: 85%;
+    line-height: 1.4;
+    animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* 各角色吐槽對話框的專屬配色 */
+.bubble.vesper { background: #2c1a1a; border: 1px solid var(--vesper-red); color: #ffb3b3; align-self: flex-start; }
+.bubble.miaoyou { background: #2c221a; border: 1px solid var(--miaoyou-orange); color: #ffd1b3; align-self: flex-end; }
+.bubble.mufeng { background: #1a242c; border: 1px solid #3498db; color: #b3d9ff; align-self: flex-start; }
+.bubble.youmingjin { background: #201a24; border: 1px solid var(--moan-purple); color: #e6ccff; align-self: flex-end; }
+.bubble.bonnie { background: #22251a; border: 1px solid #9acd32; color: #e2f4c5; align-self: flex-start; }
+
+@keyframes popIn {
+    from { opacity: 0; transform: scale(0.9) translateY(10px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
+}
+/* ==========================================
+   方案 2：雙生圖卡專用動態特效
+   ========================================== */
+.world-card-preview-wrapper {
+    position: relative;
+    display: inline-block;
+    padding: 10px;
+    background: #222;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.8), inset 0 0 15px rgba(214, 175, 55, 0.1);
+    transition: all 0.4s ease;
+    overflow: hidden;
+}
+
+.world-card-preview-wrapper:hover {
+    transform: translateY(-5px) scale(1.01);
+    border-color: var(--accent-amber);
+    box-shadow: 0 10px 30px rgba(214, 175, 55, 0.15);
+}
+
+.sca-world-img {
+    max-height: 450px;
+    object-fit: contain;
+    border: 1px solid #333;
+    transition: filter 0.3s ease;
+}
+
+.world-card-preview-wrapper:hover .sca-world-img {
+    filter: brightness(1.1);
+}
+
+/* 模擬 S.C.A. 終端全息掃描線線條 */
+.img-scan-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--accent-amber), transparent);
+    opacity: 0.7;
+    pointer-events: none;
+    animation: scaScan 4s linear infinite;
+}
+
+@keyframes scaScan {
+    0% { top: 0%; }
+    50% { top: 100%; }
+    100% { top: 0%; }
+}
+
+.world-info-card {
+    transition: all 0.3s ease;
+}
+.world-info-card:hover {
+    background: rgba(45, 45, 45, 0.9) !important;
+    transform: translateX(5px);
+}
+.sca-navbar.navbar-shrink {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: rgba(18, 18, 18, 0.98); /* 滾動後背景變更深 */
+}
+/* ==========================================
+   S.C.A. 運作邏輯控制台專用 CSS
+   ========================================== */
+.logic-card {
+    width: 100%;
+    max-width: 100%;
+    word-wrap: break-word;
+    word-break: break-all;
+    background-color: #1e1e1e !important;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.logic-card:hover {
+    border-color: var(--accent-amber);
+    box-shadow: 0 8px 25px rgba(214, 175, 55, 0.15);
+    transform: translateY(-2px);
+}
+
+/* 圖標外圈 */
+.logic-icon-wrapper {
+    width: 45px;
+    height: 45px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: #ffffff !important; /* 強制圖標為白色 */
+}
+.rule-bg { background: linear-gradient(135deg, #2c3e50, #3498db); border: 1px solid #54a0ff; }
+.consciousness-bg { background: linear-gradient(135deg, #4c1c1c, #ff4757); border: 1px solid #ff6b81; }
+.gap-bg { background: linear-gradient(135deg, #5f27cd, #341f97); border: 1px solid #9b5de5; }
+
+/* 字體與狀態 */
+.text-matrix {
+    font-family: monospace;
+    font-size: 0.75rem;
+    color: var(--accent-amber) !important;
+    display: block;
+    letter-spacing: 1px;
+}
+
+.logic-text {
+    font-size: 0.9rem;
+    color: #efeada !important; /* 使用溫潤燕麥白，確保看得很清楚 */
+    line-height: 1.6;
+}
+
+.logic-text-sm {
+    font-size: 0.82rem;
+    line-height: 1.5;
+    color: #a0a0a0 !important; /* 莫蘭迪灰次要字 */
+}
+
+.logic-status {
+    font-family: monospace;
+    font-size: 0.75rem;
+    color: #7e8c8d !important;
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px solid #2c2c2c;
+}
+
+/* 狀態閃爍小點 */
+.status-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+.status-dot.online { background-color: #2ed573; box-shadow: 0 0 8px #2ed573; }
+.status-dot.warning { background-color: #ff4757; box-shadow: 0 0 8px #ff4757; }
+
+/* 核心關鍵：徹底拯救被吃掉的 Nav Pills 頁籤顏色 */
+.sca-pills {
+    border-bottom: none !important;
+}
+
+.sca-pills .nav-item {
+    margin-right: 8px;
+}
+
+.sca-pills .nav-link {
+    color: #a0a0a0 !important; /* 未選中時是清楚的莫蘭迪灰 */
+    background-color: rgba(255, 255, 255, 0.03) !important; /* 帶有一點點微弱的暗底色 */
+    border: 1px solid #333333 !important;
+    font-size: 0.88rem;
+    padding: 8px 16px !important;
+    transition: all 0.2s ease;
+}
+
+.sca-pills .nav-link:hover {
+    border-color: var(--accent-amber) !important;
+    color: #efeada !important; /* 懸浮時變燕麥白 */
+    background-color: rgba(214, 175, 55, 0.05) !important;
+}
+
+/* 當頁籤被選中激活 (Active) 時的專屬高亮高科技配色 */
+.sca-pills .nav-link.active {
+    background-color: rgba(214, 175, 55, 0.15) !important; /* 淡淡的金色半透明底 */
+    color: var(--accent-amber) !important; /* 秩序之光金字 */
+    border: 1px solid var(--accent-amber) !important;
+    text-shadow: 0 0 5px rgba(214, 175, 55, 0.5);
+    box-shadow: inset 0 0 8px rgba(214, 175, 55, 0.1);
+}
+
+/* 確保頁籤內容的文字顏色也是亮的 */
+.tab-pane {
+    color: #efeada !important;
+}
+.tab-pane h5 {
+    font-weight: 600;
+}
+/* 優化：讓進度條上方的文字在手機板自動換行，在大螢幕左右對齊 */
+@media (max-width: 576px) {
+    .gap-monitor-box .d-flex {
+        flex-direction: column !important; /* 手機版時，文字上下堆疊，不往右死撐 */
+        align-items: flex-start !important;
+        gap: 5px;
+    }
+}
+/* ==========================================
+   S.C.A. 終端介面特殊 Bug 修正案
+   ========================================== */
+
+/* 修正一：解決中立者報酬系統文字在手機/窄螢幕被切掉的問題 */
+.tab-content {
+    word-wrap: break-word !important;
+    word-break: break-word !important; /* 優先使用更友善的斷行 */
+}
+
+.tab-content .badge {
+    white-space: normal !important;   /* 關鍵：允許 badge 內部的長文字自動換行 */
+    text-align: start !important;     /* 換行後靠左對齊 */
+    line-height: 1.5 !important;      /* 增加換行後的行高，避免字擠在一起 */
+    display: inline-block !important; /* 確保寬度自適應 */
+    width: 100% !important;           /* 在窄螢幕下撐滿容器以利換行 */
+    max-width: 100% !important;
+}
+
+/* 修正二：拯救徹底隱形變黑的登錄名冊副標題文字 */
+.logic-card-header .text-muted,
+.logic-card-header small {
+    color: #a0a0a0 !important;        /* 強制指定明亮的莫蘭迪灰 */
+    display: block !important;        /* 確保獨佔一行，不會跟標題擠在一起 */
+    margin-top: 5px !important;       /* 與主標題保持安全微調距離 */
+    opacity: 0.85 !important;         /* 保持次要標題的層次感 */
+}

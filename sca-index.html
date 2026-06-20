@@ -4,22 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>S.C.A. 核心檔案庫與維序論壇</title>
-    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome 圖標 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- 自訂 S.C.A. 樣式表 -->
     <link rel="stylesheet" href="css/sca-styles.css">
 </head>
 <body>
 
-<!-- S.C.A. 終端導覽列 -->
 <nav class="navbar navbar-expand-lg navbar-dark sca-navbar sticky-top">
     <div class="container">
         <a class="navbar-brand sca-logo" href="#">
             <i class="fas fa-shield-halved me-2"></i>S.C.A. TERMINAL
         </a>
-        <button class="navbar-toggler" type="text/css" data-bs-toggle="collapse" data-bs-target="#scaNav">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#scaNav" aria-controls="scaNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="scaNav">
@@ -33,7 +29,6 @@
     </div>
 </nav>
 
-<!-- S.C.A. 主視覺歡迎區 (Hero Section) -->
 <header class="sca-hero d-flex align-items-center justify-content-center text-center">
     <div class="hero-overlay"></div>
     <div class="container hero-content">
@@ -49,7 +44,251 @@
     </div>
 </header>
 
-<!-- Bootstrap JS (確保導覽列折疊功能正常) -->
+<section id="world-view" class="py-5" style="background-color: var(--bg-dark); border-bottom: 1px solid var(--border-color);">
+    <div class="container">
+
+        <div class="text-center mb-5">
+            <span class="terminal-badge mb-2">FILE CLASSIFIED: WORLDVIEW</span>
+            <h2 class="text-uppercase fw-bold" style="color: var(--accent-amber); letter-spacing: 2px;">
+                <i class="fas fa-globe me-2"></i>雙生時空：核心界貌對比
+            </h2>
+            <p style="color: var(--text-muted);">跨越世界意識干涉之牆 // 兩界源能流向報告</p>
+            <div style="width: 60px; height: 2px; background: var(--accent-amber); margin: 0 auto;"></div>
+        </div>
+
+        <div class="row align-items-center g-5">
+            <div class="col-lg-6 text-center">
+                <div class="world-card-preview-wrapper">
+                    <img src="assets/img/sca-worlds.png" alt="雙生時空（阿卡亞 ⇄ 嵐嶺）兩界風貌對比圖卡" class="img-fluid rounded sca-world-img">
+                    <div class="img-scan-line"></div>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="world-info-card mb-4 p-4" style="background: rgba(36, 36, 36, 0.7); border-left: 4px solid var(--accent-warning); border-radius: 4px;">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h4 style="color: #ff6b6b; font-weight: 700; margin: 0;"><i class="fas fa-shield-halved me-2"></i>歷史初期：原初影界 · 阿卡亞</h4>
+                        <span class="badge" style="background-color: rgba(255, 59, 48, 0.1); color: var(--accent-warning);">中世紀風格 // 高魔殘酷</span>
+                    </div>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">
+                        這是英雄與神蹟的時代，亦是偽善、屠殺與實驗交織的黑暗史。包含誠實暴力的<strong>魔界</strong>、全面傀儡化的白色烏托邦<strong>天界</strong>，以及充滿魔法屠殺與禁忌實驗的矛盾<strong>人界</strong>。
+                    </p>
+                    <div class="mt-2 text-start" style="font-size: 0.85rem; color: var(--text-primary);">
+                        <strong>⚔️ 法則特質：</strong>力量至上、信仰狂熱。各大底層民眾因恐懼而盲目信仰，而高層則利用宗教進行收割。
+                    </div>
+                </div>
+
+                <div class="world-info-card p-4" style="background: rgba(36, 36, 36, 0.7); border-left: 4px solid var(--accent-amber); border-radius: 4px;">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h4 style="color: var(--accent-amber); font-weight: 700; margin: 0;"><i class="fas fa-city me-2"></i>歷史後期：現代紀元 · 嵐嶺</h4>
+                        <span class="badge" style="background-color: rgba(214, 175, 55, 0.1); color: var(--accent-amber);">魔法科技並存 // 種族融合</span>
+                    </div>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">
+                        法則在漫長歲月中被稀釋得溫和且穩定。阿卡亞時期的極端偏見在此轉化為種族社交特徵（如魔族演化出腹黑與經商頭腦）。名門望族（如商氏、方家、顏家）皆繼承了古老血脈的遺贈。
+                    </p>
+                    <div class="mt-2 text-start" style="font-size: 0.85rem; color: var(--text-primary);">
+                        <strong>🧬 生態平衡：</strong>個體力量越強（如墮神、高階魔族），受孕率越低，受環境法則強力壓制。
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section id="system-logic" class="py-5" style="background-color: #121212; border-bottom: 1px solid var(--border-color);">
+    <div class="container">
+
+        <div class="text-center mb-5">
+            <span class="terminal-badge mb-2">SYSTEM CORE: RUNTIME LOGIC</span>
+            <h2 class="text-uppercase fw-bold" style="color: var(--accent-amber); letter-spacing: 2px;">
+                <i class="fas fa-layer-group me-2"></i>S.C.A. 中央運作邏輯控制台
+            </h2>
+            <p style="color: var(--text-muted);">底層代碼監測 // 時空穩定度核心參數</p>
+            <div style="width: 60px; height: 2px; background: var(--accent-amber); margin: 0 auto;"></div>
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-md-6">
+                <div class="logic-card h-100 p-4">
+                    <div class="logic-card-header d-flex align-items-center mb-3">
+                        <div class="logic-icon-wrapper rule-bg"><i class="fas fa-code"></i></div>
+                        <div class="ms-3">
+                            <h4 class="mb-0 fw-bold" style="color: var(--text-primary);">底層法則 / 規則</h4>
+                            <small class="text-matrix">The Rules // 最高權限代碼</small>
+                        </div>
+                    </div>
+                    <p class="logic-text">
+                        世界的底層代碼，部分擁有獨立自我意識。其權限高於「世界意識」，當世界意識行為失控、導致維度瀕危時，法則有權跨越壁壘，直接向 S.C.A. 發出人為干預請求。
+                    </p>
+                    <div class="logic-status"><span class="status-dot online"></span> SYSTEM STATUS: ACTIVE</div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="logic-card h-100 p-4">
+                    <div class="logic-card-header d-flex align-items-center mb-3">
+                        <div class="logic-icon-wrapper consciousness-bg"><i class="fas fa-brain"></i></div>
+                        <div class="ms-3">
+                            <h4 class="mb-0 fw-bold" style="color: #ff4757;">世界意識</h4>
+                            <small class="text-matrix" style="color: #ff6b81;">World Consciousness // 劇情偏執風險</small>
+                        </div>
+                    </div>
+                    <p class="logic-text">
+                        由世界自發衍生的主觀意志。極易受到原世界藍本（如小說劇情）干涉，產生極端的<span style="color: #ff6b81;">「主角中心論」</span>。一旦失控，會導致未來走向抽象與崩潰，需由 S.C.A. 進行降噪。
+                    </p>
+                    <div class="logic-status"><span class="status-dot warning animate-blink"></span> RISK LEVEL: HIGH PARANOIA</div>
+                </div>
+            </div>
+
+            <div class="col-12">
+                <div class="logic-card p-4 position-relative overflow-hidden">
+                    <div class="row align-items-center">
+                        <div class="col-lg-7">
+                            <div class="logic-card-header d-flex align-items-center mb-3">
+                                <div class="logic-icon-wrapper gap-bg"><i class="fas fa-door-open"></i></div>
+                                <div class="ms-3">
+                                    <h4 class="mb-0 fw-bold" style="color: var(--accent-amber);">空間跳躍機制：隙間 (The Gap)</h4>
+                                    <small class="text-matrix">負載平衡與時空殘留物監測</small>
+                                </div>
+                            </div>
+                            <p class="logic-text mb-2">
+                                穿越時空的法陣與通道。每個世界能開啟的「隙間」數量，受到該世界的「世界意識強度」嚴格限制，超載將直接引發時空崩潰。
+                            </p>
+                            <p class="logic-text-sm text-muted">
+                                <i class="fas fa-triangle-exclamation text-warning me-1"></i> <strong>時空殘留物 (Residual Echoes)：</strong>
+                                頻繁穿越會累積殘留能量。跨界前必須向目的地報備，若進入無意識世界，則必須執行人為能量清理以防排斥。
+                            </p>
+                        </div>
+                        <div class="col-lg-5 text-center mt-4 mt-lg-0">
+                            <div class="gap-monitor-box p-3 rounded" style="background: rgba(0,0,0,0.3); border: 1px solid var(--border-color);">
+                                <div class="d-flex justify-content-between mb-1" style="font-size: 0.8rem;">
+                                    <span>阿卡亞 ⇄ 嵐嶺 隙間負載率</span>
+                                    <span class="text-warning fw-bold">78% OVERLOAD RISK</span>
+                                </div>
+                                <div class="progress" style="height: 10px; background-color: #222;">
+                                    <div class="progress-bar bg-warning progress-bar-striped progress-bar-animated" role="progressbar" style="width: 78%"></div>
+                                </div>
+                                <div class="mt-2 text-start" style="font-size: 0.75rem; color: var(--morandi-gray);">
+                                    <i class="fas fa-circle-info me-1"></i> 檢測到因創世神能量崩潰引發的永久性能流連結，脈衝穩定度異常。
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12">
+                <div class="logic-card p-4 overflow-hidden">
+                    <div class="logic-card-header mb-4">
+                        <h4 class="mb-1 fw-bold" style="color: var(--text-primary);"><i class="fas fa-users-gear me-2" style="color: var(--accent-amber);"></i>跨界行為者登錄名冊</h4>
+                        <small class="text-muted">經 S.C.A. 認證之跨越世界意識干涉之牆人員分類檔案</small>
+                    </div>
+
+                    <ul class="nav nav-pills sca-pills mb-3" id="actorTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="coordinator-tab" data-bs-toggle="tab" data-bs-target="#coordinator" type="button" role="tab"><i class="fas fa-shield me-1"></i> 維序官</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="observer-tab" data-bs-toggle="tab" data-bs-target="#observer" type="button" role="tab"><i class="fas fa-eye me-1"></i> 中立者 / 觀星客</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="float-tab" data-bs-toggle="tab" data-bs-target="#float" type="button" role="tab"><i class="fas fa-ghost me-1"></i> 迷途者 / 浮塵</button>
+                        </li>
+                    </ul>
+
+                    <div class="tab-content p-3 rounded" id="actorTabContent" style="background: rgba(0,0,0,0.2); border: 1px solid #2c2c2c;">
+                        <div class="tab-pane fade show active" id="coordinator" role="tabpanel">
+                            <h5 style="color: var(--accent-amber); font-weight: 600;"><i class="fas fa-award me-2"></i>維序官 (Coordinator) —— 世界合約的守護者</h5>
+                            <p class="mb-2">與世界意識簽訂契約的守護者。掌控「隙間」封印，具備強健體質、長壽並保留前世記憶。持有核心機制為「打擊存在感」與「驅逐異質靈魂」的<strong>【概念武裝】</strong>，是清理浮塵的唯一手段。</p>
+                            <span class="badge text-bg-secondary" style="font-size: 0.75rem;">離職協議：合約轉移後將失去異界記憶變回凡人，檔案由 S.C.A. 永久保留。</span>
+                        </div>
+                        <div class="tab-pane fade" id="observer" role="tabpanel">
+                            <h5 style="color: #3498db; font-weight: 600;"><i class="fas fa-compass me-2"></i>中立者 / 觀星客 (Observer / Wanderer) —— 自由旅行者</h5>
+                            <p class="mb-2">擁有穿越與強大戰鬥能力，但不與任何世界意識簽約的自由人。他們不隸屬於 S.C.A.，但雙方存在互利關係。</p>
+                            <span class="badge text-bg-info text-dark" style="font-size: 0.75rem;">報酬系統：S.C.A. 根據其協助任務之需求，給予特定世界的金錢、虛擬身分或稀有資源作為酬勞。</span>
+                        </div>
+                        <div class="tab-pane fade" id="float" role="tabpanel">
+                            <h5 style="color: #e74c3c; font-weight: 600;"><i class="fas fa-radiation me-2"></i>迷途者 / 浮塵 (Float) —— 時空瓦解的汙染隳體</h5>
+                            <p class="mb-2">受時空瓦解能量汙染的破碎靈魂，不受常規規則約束，具備極強的攻擊性，會嘗試寄生或替代原住民。寄生後會恢復部分意識，但行為模式絕對傾向「混亂中立」或「混亂邪惡」。</p>
+                            <div class="p-2 mt-2 rounded" style="background: rgba(231, 76, 60, 0.1); border: 1px dashed #e74c3c; font-size: 0.85rem;">
+                                <strong>⚠️ 寄生徵兆檢測報告：</strong> 影子雜訊化（呈現馬賽克像素異狀）、瞳孔色彩紊亂、不自覺喃喃吐出未知的異界語言。
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<section id="forum" class="py-5">
+    <div class="container">
+
+        <div class="text-center mb-5">
+            <h2 class="text-uppercase fw-bold" style="color: var(--accent-amber); letter-spacing: 2px;">
+                <i class="fas fa-comments me-2"></i>S.C.A. 內部維序論壇
+            </h2>
+            <p style="color: var(--text-muted);">歷史能流修正案 // 匿名意見反饋端</p>
+            <div style="width: 60px; height: 2px; background: var(--accent-amber); margin: 0 auto;"></div>
+        </div>
+
+        <div class="sca-system-container">
+            <div class="sca-header d-flex justify-content-between align-items-center p-3" style="background: #1e1e1e; border-bottom: 1px solid var(--border-color);">
+                <div class="system-title fw-bold" style="color: var(--text-primary);">🏛️ S.C.A. 內部系統 - 維序官核心交流區</div>
+                <div class="access-level badge text-bg-danger" style="font-size: 0.75rem; letter-spacing: 1px;">【密級：特級管制 / 混沌源能】</div>
+            </div>
+
+            <div class="sca-announcement">
+                <div class="ticker-text">🚨 今日公告：嚴禁在任務期間私自向阿卡亞分部代購「伊墨茶」，一經發現扣除當月時空穩定津貼。</div>
+            </div>
+
+            <div class="message-board p-2">
+
+                <div class="post-card" onclick="triggerComplaint('vesper')">
+                    <div class="post-meta mb-2 d-flex justify-content-between align-items-center">
+                        <span class="author" style="color: var(--accent-amber); font-weight: 500;"><i class="fas fa-user-secret me-1"></i> 匿名維序官 07 號</span>
+                        <span class="badge" style="background-color: rgba(255, 59, 48, 0.2); color: #ff6b6b; border: 1px solid var(--accent-warning);">#阻遏Vesper異常</span>
+                    </div>
+                    <div class="post-content" style="color: var(--text-primary); font-size: 0.95rem;">
+                        新人報到，請教各位前輩，系統手冊裡寫的 【Vesper Lancrea】 到底是什麼？昨天監測到能流爆發，我剛想去現場，就被組長死死按在椅子上。
+                    </div>
+                    <div class="complaint-box" id="complaint-vesper"></div>
+                </div>
+
+                <div class="post-card" onclick="triggerComplaint('moyuan')">
+                    <div class="post-meta mb-2 d-flex justify-content-between align-items-center">
+                        <span class="author" style="color: var(--accent-amber); font-weight: 500;"><i class="fas fa-satellite-dish me-1"></i> 時空能流監測組</span>
+                        <span class="badge" style="background-color: rgba(147, 112, 219, 0.2); color: #e6ccff; border: 1px solid var(--moan-purple);">#混沌共鳴預警</span>
+                    </div>
+                    <div class="post-content" style="color: var(--text-primary); font-size: 0.95rem;">
+                        再次發出橙色預警！監測到墨淵的能量特徵正在往 Vesper Lancrea 的座標靠攏。重複一遍，這兩人的混沌屬性共鳴機率極高！上次吵架我們去修復時間線熬了三個通宵！
+                    </div>
+                    <div class="complaint-box" id="complaint-moyuan"></div>
+                </div>
+
+                <div class="post-card" onclick="triggerComplaint('mufeng')">
+                    <div class="post-meta mb-2 d-flex justify-content-between align-items-center">
+                        <span class="author" style="color: var(--accent-amber); font-weight: 500;"><i class="fas fa-shield me-1"></i> 後勤物資管理部</span>
+                        <span class="badge" style="background-color: rgba(214, 175, 55, 0.15); color: var(--accent-amber); border: 1px solid var(--accent-amber);">#救世主求援渠道</span>
+                    </div>
+                    <div class="post-content" style="color: var(--text-primary); font-size: 0.95rem;">
+                        提問，如果 Vesper 與墨淵的混沌共鳴真的壓不住了，我們該向誰求援？全體維序官都在刷「葉沐風先生」，他真的有這麼神嗎？
+                    </div>
+                    <div class="complaint-box" id="complaint-mufeng"></div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/script.js"></script>
 </body>
 </html>
