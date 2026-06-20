@@ -236,6 +236,15 @@ body {
 .bubble.mufeng { background: #1a242c; border: 1px solid #3498db; color: #b3d9ff; align-self: flex-start; }
 .bubble.youmingjin { background: #201a24; border: 1px solid var(--moan-purple); color: #e6ccff; align-self: flex-end; }
 .bubble.bonnie { background: #22251a; border: 1px solid #9acd32; color: #e2f4c5; align-self: flex-start; }
+/* 新增：資深維序官 A 的對話框專屬配色（神祕低調的深灰底 + 秩序淡金邊） */
+.bubble.senior-a {
+    background: #242526;
+    border: 1px dashed var(--accent-amber); /* 虛線邊框，暗示檔案已被屏蔽 */
+    color: #b0b3b8;
+    align-self: flex-start; /* 靠左顯示 */
+    opacity: 0.9;
+    box-shadow: 0 0 8px rgba(214, 175, 55, 0.1);
+}
 
 @keyframes popIn {
     from { opacity: 0; transform: scale(0.9) translateY(10px); }
