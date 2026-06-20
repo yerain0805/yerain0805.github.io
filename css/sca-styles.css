@@ -1,0 +1,149 @@
+/* ==========================================
+   S.C.A. 專用全域變數與重設
+   ========================================== */
+:root {
+    --bg-dark: #1a1a1a;          /* 深色背景 */
+    --bg-terminal: #242424;      /* 終端機卡片色 */
+    --text-primary: #efeada;     /* 沿用你喜歡的溫潤燕麥白 */
+    --text-muted: #a0a0a0;       /* 莫蘭迪灰（低調文字） */
+    --accent-amber: #d4af37;     /* 秩序之光金 */
+    --accent-warning: #ff3b30;   /* Vesper Alarm 警報紅 */
+    --border-color: #3a3a3a;     /* 邊框線條 */
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    font-family: 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+    overflow-x: hidden;
+}
+
+/* ==========================================
+   S.C.A. 終端導覽列樣式
+   ========================================== */
+.sca-navbar {
+    background-color: rgba(26, 26, 26, 0.95);
+    border-bottom: 2px solid var(--border-color);
+    backdrop-filter: blur(10px);
+}
+
+.sca-logo {
+    color: var(--accent-amber) !important;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.sca-navbar .nav-link {
+    color: var(--text-muted) !important;
+    font-size: 0.95rem;
+    padding: 8px 16px !important;
+    transition: all 0.3s ease;
+}
+
+.sca-navbar .nav-link:hover,
+.sca-navbar .nav-link.active {
+    color: var(--text-primary) !important;
+    text-shadow: 0 0 8px rgba(239, 234, 218, 0.5);
+}
+
+.sca-navbar .return-home {
+    border: 1px solid var(--accent-amber);
+    border-radius: 20px;
+    color: var(--accent-amber) !important;
+    margin-left: 10px;
+}
+
+.sca-navbar .return-home:hover {
+    background-color: var(--accent-amber);
+    color: var(--bg-dark) !important;
+}
+
+/* ==========================================
+   S.C.A. 主視覺區 (Hero)
+   ========================================== */
+.sca-hero {
+    height: 100vh;
+    position: relative;
+    background-color: #121212;
+    /* 這裡你可以放一張有高科技網格或雙生時空的暗色背景圖 */
+    background-image: linear-gradient(rgba(26, 26, 26, 0.8), rgba(26, 26, 26, 0.95));
+}
+
+/* 模擬黑客終端機的背景微弱網格紋路 */
+.sca-hero::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 20px 20px;
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.terminal-badge {
+    display: inline-block;
+    background-color: rgba(212, 175, 55, 0.15);
+    color: var(--accent-amber);
+    border: 1px solid var(--accent-amber);
+    padding: 4px 12px;
+    font-size: 0.8rem;
+    font-family: monospace;
+    letter-spacing: 2px;
+    border-radius: 4px;
+}
+
+.sca-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    letter-spacing: 4px;
+    color: var(--text-primary);
+    text-shadow: 0 0 15px rgba(239, 234, 218, 0.2);
+}
+
+.sca-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+}
+
+/* 警報閃爍特效框 */
+.vesper-warning-box {
+    max-width: 600px;
+    background-color: rgba(255, 59, 48, 0.08);
+    border: 1px dashed var(--accent-warning);
+    padding: 12px 20px;
+    font-size: 0.9rem;
+    color: #ff6b6b;
+    border-radius: 6px;
+}
+
+.animate-blink {
+    animation: blinker 1.5s linear infinite;
+}
+
+@keyframes blinker {
+    50% { opacity: 0; }
+}
+
+/* 核心按鈕 */
+.sca-btn-primary {
+    background: transparent;
+    border: 2px solid var(--text-primary);
+    color: var(--text-primary);
+    padding: 12px 30px;
+    font-weight: bold;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.sca-btn-primary:hover {
+    background: var(--text-primary);
+    color: var(--bg-dark);
+    box-shadow: 0 0 20px rgba(239, 234, 218, 0.4);
+}

@@ -1,11 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S.C.A. 核心檔案庫與維序論壇</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome 圖標 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- 自訂 S.C.A. 樣式表 -->
     <link rel="stylesheet" href="css/sca-styles.css">
 </head>
 <body>
 
+<!-- S.C.A. 終端導覽列 -->
+<nav class="navbar navbar-expand-lg navbar-dark sca-navbar sticky-top">
+    <div class="container">
+        <a class="navbar-brand sca-logo" href="#">
+            <i class="fas fa-shield-halved me-2"></i>S.C.A. TERMINAL
+        </a>
+        <button class="navbar-toggler" type="text/css" data-bs-toggle="collapse" data-bs-target="#scaNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="scaNav">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item"><a class="nav-link active" href="#world-view"><i class="fas fa-globe me-1"></i> 世界觀簡述</a></li>
+                <li class="nav-item"><a class="nav-link" href="#system-logic"><i class="fas fa-layer-group me-1"></i> 運作邏輯</a></li>
+                <li class="nav-item"><a class="nav-link" href="#forum"><i class="fas fa-comments me-1"></i> 內部留言板</a></li>
+                <li class="nav-item"><a class="nav-link return-home" href="index.html"><i class="fas fa-arrow-left me-1"></i> 返回作品集</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- S.C.A. 主視覺歡迎區 (Hero Section) -->
+<header class="sca-hero d-flex align-items-center justify-content-center text-center">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+        <div class="terminal-badge mb-3">SYSTEM STATUS: SECURE</div>
+        <h1 class="sca-title">雙生時空核心檔案庫</h1>
+        <p class="sca-subtitle">Spatiotemporal Coordination Agency // 維序者官方終端系統</p>
+        <div class="vesper-warning-box mx-auto">
+            <p class="mb-0"><i class="fas fa-triangle-exclamation me-2 animate-blink"></i> 警告：此處記錄受世界意識干涉之牆外側報告，非相關人員請速離去。</p>
+        </div>
+        <a href="#world-view" class="btn sca-btn-primary mt-4">
+            <i class="fas fa-folder-open me-2"></i>解鎖世界觀卷宗
+        </a>
+    </div>
+</header>
+
+<!-- Bootstrap JS (確保導覽列折疊功能正常) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
