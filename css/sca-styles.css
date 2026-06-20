@@ -489,3 +489,52 @@ body {
     0%, 100% { opacity: 1; }
     50% { opacity: 0.4; }
 }
+
+/* ==========================================
+   S.C.A. 終端控制台專用追加樣式
+   ========================================== */
+
+/* 終端頂部三個點小裝飾 */
+.terminal-dots span {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+}
+.dot-red { background: #ff5f56; }
+.dot-yellow { background: #ffbd2e; }
+.dot-green { background: #27c93f; }
+
+/* 終端分頁頁籤美化 */
+.sca-terminal-tabs .nav-link {
+    border: none !important;
+    background: transparent !important;
+    font-size: 0.9rem;
+    padding: 10px 20px !important;
+    border-radius: 0 !important;
+    transition: all 0.3s ease;
+}
+.sca-terminal-tabs .nav-link:hover {
+    color: var(--text-primary) !important;
+}
+.sca-terminal-tabs .nav-link.active {
+    color: var(--accent-amber) !important;
+    border-bottom: 2px solid var(--accent-amber) !important;
+    background: rgba(214, 175, 55, 0.05) !important;
+    text-shadow: 0 0 5px rgba(214, 175, 55, 0.3);
+}
+
+/* 內滾動條美化（防爆版面，讓留言板像真正終端代碼流） */
+.bbs-stream::-webkit-scrollbar {
+    width: 6px;
+}
+.bbs-stream::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+}
+.bbs-stream::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 3px;
+}
+.bbs-stream::-webkit-scrollbar-thumb:hover {
+    background: #444;
+}

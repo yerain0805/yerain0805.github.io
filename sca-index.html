@@ -98,7 +98,6 @@
                 </div>
             </div>
         </div>
-
     </div>
 </section>
 
@@ -223,74 +222,146 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
-
         </div>
-
     </div>
 </section>
 
-<section id="forum" class="py-5">
+
+
+<section id="forum" class="py-5" style="background-color: var(--sca-bg);">
     <div class="container">
 
         <div class="text-center mb-5">
+            <span class="terminal-badge mb-2">S.C.A. SYSTEM TERMINAL v2.6.4</span>
             <h2 class="text-uppercase fw-bold" style="color: var(--accent-amber); letter-spacing: 2px;">
-                <i class="fas fa-comments me-2"></i>S.C.A. 內部維序論壇
+                <i class="fas fa-terminal me-2 animate-blink"></i>S.C.A. 中央終端控制台
             </h2>
-            <p style="color: var(--text-muted);">歷史能流修正案 // 匿名意見反饋端</p>
+            <p style="color: var(--text-muted);">資訊安全干涉牆 // 核心數據與維序匿名端</p>
             <div style="width: 60px; height: 2px; background: var(--accent-amber); margin: 0 auto;"></div>
         </div>
 
-        <div class="sca-system-container">
+        <div class="sca-system-container shadow-lg" style="border: 1px solid var(--border-color); background: #161616; border-radius: 8px; overflow: hidden;">
+
             <div class="sca-header d-flex justify-content-between align-items-center p-3" style="background: #1e1e1e; border-bottom: 1px solid var(--border-color);">
-                <div class="system-title fw-bold" style="color: var(--text-primary);">🏛️ S.C.A. 內部系統 - 維序官核心交流區</div>
-                <div class="access-level badge text-bg-danger" style="font-size: 0.75rem; letter-spacing: 1px;">【密級：特級管制 / 混沌源能】</div>
+                <div class="system-title fw-bold" style="color: var(--text-primary); font-size: 0.95rem;">
+                    <i class="fas fa-folder-tree me-2 text-warning"></i>🏛️ S.C.A. 內部系統 - 核心資料與交流端
+                </div>
+                <div class="terminal-dots d-flex gap-2">
+                    <span class="dot-red"></span><span class="dot-yellow"></span><span class="dot-green"></span>
+                </div>
             </div>
 
             <div class="sca-announcement">
                 <div class="ticker-text">🚨 今日公告：嚴禁在任務期間私自向阿卡亞分部代購「伊墨茶」，一經發現扣除當月時空穩定津貼。</div>
             </div>
 
-            <div class="message-board p-2">
+            <ul class="nav nav-tabs sca-terminal-tabs px-3 pt-3" id="terminalTab" role="tablist" style="border-bottom: 1px solid var(--border-color); background: #1a1a1a;">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="archive-tab" data-bs-toggle="tab" data-bs-target="#terminal-archive" type="button" role="tab" style="color: var(--text-muted); font-weight: 600;">
+                        <i class="fas fa-folder-open me-2"></i>【特級管制】特殊觀測檔案
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="bbs-tab" data-bs-toggle="tab" data-bs-target="#terminal-bbs" type="button" role="tab" style="color: var(--text-muted); font-weight: 600;">
+                        <i class="fas fa-comments me-2"></i>【核心交流區】內部匿名留言板
+                    </button>
+                </li>
+            </ul>
 
-                <div class="post-card" onclick="triggerComplaint('vesper')">
-                    <div class="post-meta mb-2 d-flex justify-content-between align-items-center">
-                        <span class="author" style="color: var(--accent-amber); font-weight: 500;"><i class="fas fa-user-secret me-1"></i> 匿名維序官 07 號</span>
-                        <span class="badge" style="background-color: rgba(255, 59, 48, 0.2); color: #ff6b6b; border: 1px solid var(--accent-warning);">#阻遏Vesper異常</span>
+            <div class="tab-content p-4" id="terminalTabContent" style="background: #161616;">
+
+                <div class="tab-pane fade show active" id="terminal-archive" role="tabpanel">
+                    <div class="mb-4 p-3 rounded" style="background: rgba(214, 175, 55, 0.05); border: 1px solid rgba(214, 175, 55, 0.15);">
+                        <span class="badge mb-2" style="background-color: rgba(214, 175, 55, 0.1); color: var(--accent-amber); border: 1px solid rgba(214, 175, 55, 0.3);">分類標籤：【特級管制 / 混沌源能】</span>
+                        <p class="small mb-0" style="color: var(--text-muted); line-height: 1.6;">
+                            <strong>概述：</strong>「原始意識體」為時空間極低機率自然誕生的特殊存在。由於其誕生自時空亂流與虛無之海，本體均伴隨不同程度的「混沌」屬性，具備強大的時空干涉力。 S.C.A. 對此類個體的標準作業程序（SOP）為：優先長期靜態觀察 ➔ 評估混沌偏向 ➔ 依據個體態度動態調整維序方案。
+                        </p>
                     </div>
-                    <div class="post-content" style="color: var(--text-primary); font-size: 0.95rem;">
-                        新人報到，請教各位前輩，系統手冊裡寫的 【Vesper Lancrea】 到底是什麼？昨天監測到能流爆發，我剛想去現場，就被組長死死按在椅子上。
+
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <div class="card h-100" style="background: var(--card-bg); border: 1px solid var(--border-color); border-left: 4px solid var(--vesper-red);">
+                                <div class="card-body">
+                                    <h5 class="fw-bold mb-2" style="color: #ff6b6b;"><i class="fas fa-search-plus me-2"></i>觀測對象 A：Vesper (某葉)</h5>
+                                    <div class="small mb-2" style="color: var(--text-muted);">威脅級別：<span class="text-danger fw-bold">【極高 (Vesper Lancrea)】</span></div>
+                                    <p class="card-text small" style="color: #efeada; line-height: 1.6;">行事風格難以預測，情感波動曾引發時空永久性能流連結。屬於重點監控對象。</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card h-100" style="background: var(--card-bg); border: 1px solid var(--border-color); border-left: 4px solid var(--mufeng-gold);">
+                                <div class="card-body">
+                                    <h5 class="fw-bold mb-2" style="color: var(--accent-amber);"><i class="fas fa-search-minus me-2"></i>觀測對象 B：葉沐風</h5>
+                                    <div class="small mb-2" style="color: var(--text-muted);">威脅級別：<span class="text-success fw-bold">【可控】</span></div>
+                                    <p class="card-text small" style="color: #efeada; line-height: 1.6;">曾任天族族長，展現出極強的「秩序感」與自律性。相較於 Vesper，其行為邏輯更符合理性預期，屬於令管理局相對「省心」的合作/觀測對象。</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="complaint-box" id="complaint-vesper"></div>
+
+                    <div class="alert mt-4 border-danger" role="alert" style="background-color: rgba(255, 59, 48, 0.05); border: 1px dashed var(--accent-warning); border-radius: 6px;">
+                        <h6 class="alert-heading text-danger fw-bold mb-2"><i class="fas fa-triangle-exclamation me-2 animate-blink"></i>聯合橙色預警：【當 Vesper 與 葉沐風 同時現身】</h6>
+                        <p class="small mb-2" style="color: #efeada;"><strong>警報觸發條件：</strong>當此二位擁有創世級實力的原始意識體於同一時空節點會合，且身邊無「喵幽」或「幽冥燼」等情感錨點在場時。</p>
+                        <p class="small mb-0" style="color: var(--text-muted);"><strong>維序官應對方針：</strong>全體提高警惕，全面啟動干涉監測。 兩者高機率會基於「一時興起、覺得有趣」的心理，聯手策劃出實則對時空結構極具危險性的瘋狂計畫。</p>
+                    </div>
                 </div>
 
-                <div class="post-card" onclick="triggerComplaint('moyuan')">
-                    <div class="post-meta mb-2 d-flex justify-content-between align-items-center">
-                        <span class="author" style="color: var(--accent-amber); font-weight: 500;"><i class="fas fa-satellite-dish me-1"></i> 時空能流監測組</span>
-                        <span class="badge" style="background-color: rgba(147, 112, 219, 0.2); color: #e6ccff; border: 1px solid var(--moan-purple);">#混沌共鳴預警</span>
-                    </div>
-                    <div class="post-content" style="color: var(--text-primary); font-size: 0.95rem;">
-                        再次發出橙色預警！監測到墨淵的能量特徵正在往 Vesper Lancrea 的座標靠攏。重複一遍，這兩人的混沌屬性共鳴機率極高！上次吵架我們去修復時間線熬了三個通宵！
-                    </div>
-                    <div class="complaint-box" id="complaint-moyuan"></div>
-                </div>
+                <div class="tab-pane fade" id="terminal-bbs" role="tabpanel">
+                    <div class="bbs-stream d-flex flex-column gap-3" style="max-height: 450px; overflow-y: auto; padding-right: 5px;">
 
-                <div class="post-card" onclick="triggerComplaint('mufeng')">
-                    <div class="post-meta mb-2 d-flex justify-content-between align-items-center">
-                        <span class="author" style="color: var(--accent-amber); font-weight: 500;"><i class="fas fa-shield me-1"></i> 後勤物資管理部</span>
-                        <span class="badge" style="background-color: rgba(214, 175, 55, 0.15); color: var(--accent-amber); border: 1px solid var(--accent-amber);">#救世主求援渠道</span>
-                    </div>
-                    <div class="post-content" style="color: var(--text-primary); font-size: 0.95rem;">
-                        提問，如果 Vesper 與墨淵的混沌共鳴真的壓不住了，我們該向誰求援？全體維序官都在刷「葉沐風先生」，他真的有這麼神嗎？
-                    </div>
-                    <div class="complaint-box" id="complaint-mufeng"></div>
-                </div>
+                        <div class="post-card m-0" onclick="triggerComplaint('vesper')">
+                            <div class="post-meta mb-2 d-flex justify-content-between align-items-center">
+                                <span class="author" style="color: var(--accent-amber); font-weight: 500;"><i class="fas fa-user-secret me-1"></i> 匿名維序官 07 號</span>
+                                <span class="badge" style="background-color: rgba(255, 59, 48, 0.2); color: #ff6b6b; border: 1px solid var(--accent-warning);">#阻遏Vesper異常</span>
+                            </div>
+                            <div class="post-content" style="color: var(--text-primary); font-size: 0.95rem;">
+                                新人報到，請教各位前輩，系統手冊裡寫的 【Vesper Lancrea】 到底是什麼？昨天監測到能流爆發，我剛想去現場，就被組長死死按在椅子上。
+                            </div>
+                            <div class="complaint-box" id="complaint-vesper"></div>
+                        </div>
 
+                        <div class="post-card m-0" onclick="triggerComplaint('moyuan')">
+                            <div class="post-meta mb-2 d-flex justify-content-between align-items-center">
+                                <span class="author" style="color: var(--accent-amber); font-weight: 500;"><i class="fas fa-satellite-dish me-1"></i> 時空能流監測組</span>
+                                <span class="badge" style="background-color: rgba(147, 112, 219, 0.2); color: #e6ccff; border: 1px solid var(--moan-purple);">#混沌共鳴預警</span>
+                            </div>
+                            <div class="post-content" style="color: var(--text-primary); font-size: 0.95rem;">
+                                再次發出橙色預警！監測到墨淵的能量特徵正在往 Vesper Lancrea 的座標靠攏。重複一遍，這兩人的混沌屬性共鳴機率極高！上次吵架我們去修復時間線熬了三個通宵！
+                            </div>
+                            <div class="complaint-box" id="complaint-moyuan"></div>
+                        </div>
+
+                        <div class="post-card m-0" style="border-left: 4px solid var(--accent-warning); cursor: default; background: rgba(255, 59, 48, 0.02);">
+                            <div class="post-meta mb-2 d-flex justify-content-between align-items-center">
+                                <span class="author" style="color: #ff6b6b; font-weight: 500;"><i class="fas fa-bug me-1"></i> 匿名觀測員 1004 號</span>
+                                <span class="badge text-bg-danger" style="font-size: 0.7rem; letter-spacing: 1px;">LOG_OVERRIDDEN</span>
+                            </div>
+                            <div class="post-content mb-2" style="color: var(--text-primary); font-size: 0.95rem;">
+                                雖然檔案登記為『幽逸雨』，但依據局內觀測，該個體即為 Vesper 的核心錨點『喵幽』。此人極度危險且行蹤飄忽，若在任務中偶遇，千萬不要試圖正面衝突。
+                            </div>
+                            <div class="p-2 rounded" style="background: rgba(212, 175, 55, 0.08); border-left: 2px solid var(--accent-amber); font-family: monospace; font-size: 0.85rem;">
+                                <span style="color: var(--accent-amber); font-weight: bold;"><i class="fas fa-shield-halved me-1"></i> [高階權限覆寫修正]：</span><br>
+                                <span style="color: #efeada;">修正樓上的恐慌發言。遇到她時，請立刻通知葉沐風先生出面『泡茶規勸』。只要有沐風先生在場，該個體會瞬間退化為無害的貓咪狀態，特此公告。</span>
+                            </div>
+                        </div>
+
+                        <div class="post-card m-0" onclick="triggerComplaint('mufeng')">
+                            <div class="post-meta mb-2 d-flex justify-content-between align-items-center">
+                                <span class="author" style="color: var(--accent-amber); font-weight: 500;"><i class="fas fa-shield me-1"></i> 後勤物資管理部</span>
+                                <span class="badge" style="background-color: rgba(214, 175, 55, 0.15); color: var(--accent-amber); border: 1px solid var(--accent-amber);">#救世主求援渠道</span>
+                            </div>
+                            <div class="post-content" style="color: var(--text-primary); font-size: 0.95rem;">
+                                提問，如果 Vesper 與墨淵的混沌共鳴真的壓不住了，我們該向誰求援？全體維序官都在刷「葉沐風先生」，他真的有這麼神嗎？
+                            </div>
+                            <div class="complaint-box" id="complaint-mufeng"></div>
+                        </div>
+
+                    </div>
+                </div>
             </div>
         </div>
-
     </div>
 </section>
 
