@@ -465,3 +465,27 @@ body {
     margin-top: 5px !important;       /* 與主標題保持安全微調距離 */
     opacity: 0.85 !important;         /* 保持次要標題的層次感 */
 }
+.sca-alert-banner {
+    background: rgba(230, 126, 34, 0.15); /* 橙色半透明 */
+    border-bottom: 1px solid #e67e22;
+    color: #f39c12;
+    padding: 6px 15px;
+    font-size: 0.85rem;
+    font-family: monospace;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.alert-tag {
+    background: #e67e22;
+    color: #fff;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-weight: bold;
+    white-space: nowrap;
+    animation: blink 1.5s infinite; /* 讓警報標籤閃爍 */
+}
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+}
