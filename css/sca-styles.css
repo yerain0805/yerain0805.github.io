@@ -7,6 +7,7 @@
     --bg-terminal: #161616;      /* 終端機控制台底色 */
     --card-bg: #1e1e1e;          /* 卡片區塊底色 */
     --border-color: #3a3a3a;     /* 標準邊框線條 */
+    --sca-bg: #161616;
 
     /* 文字顏色 */
     --text-primary: #efeada;     /* 溫潤燕麥白（主要文字） */
