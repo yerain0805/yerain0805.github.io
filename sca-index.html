@@ -395,25 +395,27 @@
                     <div class="bbs-stream d-flex flex-column gap-3" style="max-height: 500px; overflow-y: auto; padding-right: 5px;">
 
                         <!-- 貼文：Vesper 警報 -->
-                        <div class="post-card m-0" onclick="triggerComplaint('vesper')">
+                        <div class="post-card m-0" onclick="triggerComplaint('vesper')" style="cursor: pointer;">
                             <div class="post-meta mb-2 d-flex justify-content-between align-items-center">
                                 <span class="author" style="color: var(--accent-amber); font-weight: 500;"><i class="fas fa-user-secret me-1"></i> 維序官 07 號</span>
                                 <span class="badge" style="background-color: rgba(255, 59, 48, 0.15); color: #ff6b6b; border: 1px solid var(--accent-warning);">#VesperAlarm 由來</span>
                             </div>
                             <div class="post-content small" style="color: var(--text-primary); line-height: 1.5;">
                                 新人報到，請教各位前輩，系統手冊裡寫的 【Vesper Alarm】 到底是什麼？昨天監測到能流爆發，我剛想去現場，就被組長死死按在椅子上。
+                                <span class="text-info d-block mt-2 small" style="font-size: 0.75rem;"><i class="fas fa-hand-pointer me-1 animate-blink"></i> [點擊控制台擴展調閱局內線流回覆...]</span>
                             </div>
-                            <div class="complaint-box" id="complaint-vesper"></div>
+                            <!-- JS 彈出對話泡泡的容器 -->
+                            <div class="complaint-box mt-3" id="complaint-vesper" style="display: none; flex-direction: column; gap: 10px;"></div>
                         </div>
 
-                        <!-- 貼文：資深維序官 A 的回覆（改用新設定） -->
-                        <div class="post-card m-0" style="background: rgba(0,0,0,0.1); border-left-color: var(--accent-amber); cursor: default;">
+                        <!-- 貼文：其他維序官的附和（取代原本寫死的 A） -->
+                        <div class="post-card m-0" style="background: rgba(0,0,0,0.1); border-left-color: rgba(214, 175, 55, 0.3); cursor: default;">
                             <div class="post-meta mb-2 d-flex justify-content-between align-items-center">
-                                <span class="author" style="color: var(--accent-amber); font-weight: 500;"><i class="fas fa-graduation-cap me-1"></i> 資深維序官 A</span>
+                                <span class="author" style="color: var(--text-muted); font-weight: 500;"><i class="fas fa-ghost me-1"></i> 維序官 11 號</span>
                                 <span class="badge text-bg-secondary" style="font-size: 0.7rem;">RE: #VesperAlarm</span>
                             </div>
-                            <div class="post-content small" style="color: #efeada; line-height: 1.5;">
-                                樓上，組長是在救你！代號 Vesper Lancrea（本名葉雨幽，也就是我們私下叫的某葉），是自然誕生的原始意識體。簡單來說，只要她心情好，時空就安全；她要是崩潰或暴走，阿卡亞和嵐嶺就會像現在這樣被強行焊死在一起。唯一自救手段是立刻鎖定『幽逸雨（喵幽）』小姐的位置，祈禱她及時順毛，只要她拍拍某葉的頭，警報三秒解除。
+                            <div class="post-content small" style="color: var(--text-muted); line-height: 1.5;">
+                                默默排樓上……新人在點擊上面那條線路調閱報告時最好小聲點。據說某葉大人非常喜歡潛水看我們論壇，上次有人編排她，隔天那個人的終端密碼就被強制改成了一串魔術撲克牌密碼。
                             </div>
                         </div>
 
