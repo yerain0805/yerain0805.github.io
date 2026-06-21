@@ -159,3 +159,63 @@ function initMissionWall() {
 window.addEventListener('DOMContentLoaded', () => {
     initMissionWall();
 });
+
+/**
+ * =========================================================================
+ * 兔子 Bammie 的網頁惡作劇（最強彩蛋計數與覆寫機制）
+ * =========================================================================
+ */
+function initBammieEasterEgg() {
+    const bunnyBtn = document.getElementById('bammie-hacker-bunny');
+    const overlay = document.getElementById('bammie-popup-overlay');
+    const feedBtn = document.getElementById('btn-feed-strawberry');
+
+    if (!bunnyBtn || !overlay || !feedBtn) return;
+
+    let clickCount = 0;
+    let clickTimeout;
+
+    bunnyBtn.addEventListener('click', () => {
+        clickCount++;
+
+        // 畫面上震動提示，暗示玩家發現了可疑按鈕
+        bunnyBtn.style.transform = `scale(1.2) rotate(${clickCount % 2 === 0 ? 15 : -15}deg)`;
+        setTimeout(() => { bunnyBtn.style.transform = ''; }, 150);
+
+        // 重置連續點擊時間差計時器（必須在 3 秒內點完 5 次才算成就）
+        clearTimeout(clickTimeout);
+        clickTimeout = setTimeout(() => {
+            clickCount = 0;
+        }, 3000);
+
+        // 達成 5 次點擊成就，啟動侵入！
+        if (clickCount === 5) {
+            clickCount = 0;
+            triggerBammieHack();
+        }
+    });
+
+    // 觸發入侵：篡改主體變數，開啟警告彈窗
+    function triggerBammieHack() {
+        document.body.classList.add('bammie-hacked-mode');
+        overlay.style.display = 'flex';
+        console.warn("⚠️ S.C.A. ALERT: Unauthorized code block injected by 'Bammie'.");
+    }
+
+    // 解除入侵：投餵草莓大福
+    feedBtn.addEventListener('click', () => {
+        overlay.style.animation = 'bammiePop 0.3s ease reverse forwards';
+
+        setTimeout(() => {
+            document.body.classList.remove('bammie-hacked-mode');
+            overlay.style.display = 'none';
+            overlay.style.animation = ''; // 還原動畫
+            alert("Bammie：「草莓成分很純正，多謝款待。系統權限還給你們囉～(燦爛微笑)」");
+        }, 3000); // 留給回播動畫一點緩衝時間
+    });
+}
+
+// 註冊到現有的 DOMContentLoaded 監聽器中
+window.addEventListener('DOMContentLoaded', () => {
+    initBammieEasterEgg();
+});
