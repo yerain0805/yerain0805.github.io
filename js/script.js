@@ -103,3 +103,59 @@ window.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+/**
+ * =========================================================================
+ * 方案一：滾動式終端機任務牆 —— 數據載入與無縫複製控制
+ * =========================================================================
+ */
+const scaMissions = [
+    { time: "08:14:22", dept: "歷史遺物修復科", status: "WORKING", info: "[工作日誌] 首席實習生葉思冥正在縫補被創世神們吵架震碎的時間線...（怨念值 99%）" },
+    { time: "09:30:15", dept: "管制觀測處", status: "WARNING", info: "⚠️ 幽冥燼卡片警告：嚴禁在此觀測對象面前拿出醫療針劑或蔬果汁！" },
+    { time: "11:05:40", dept: "後勤整備裝備庫", status: "SYNCED", info: "[環境偽裝狀態] 概念武裝已自動偽裝為：鑲嵌寶石的鋼筆（魔法世界模式）。" },
+    { time: "13:22:11", dept: "特級戰略部", status: "ALERT", info: "【警告】觀測到原始意識體 Vesper 低血糖指標接近臨界點，速將巧克力補給投遞至相應時空節點！" },
+    { time: "15:45:00", dept: "技術科", status: "MONITOR", info: "檢測到防火牆遭受未授權干涉，偵測到微量草莓賽博兔代碼特徵，暫定為非惡意串門，予以放行。" },
+    { time: "17:10:33", dept: "外勤維序分隊", status: "STABLE", info: "已成功回收原初影界浮塵碎屑三枚，當前局部時空穩定度已回升至 94.2%。" }
+];
+
+function initMissionWall() {
+    const track = document.getElementById('mission-scroll-track');
+    if (!track) return;
+
+    // 將狀態轉換為對應的 Bootstrap 文字色彩或自訂發光色
+    const getStatusBadge = (status) => {
+        const colors = {
+            WORKING: '#e17055',
+            WARNING: '#d63031',
+            SYNCED: '#0984e3',
+            ALERT: '#ff9f43',
+            MONITOR: '#fdcb6e',
+            STABLE: '#00b894'
+        };
+        return `<span style="color: ${colors[status] || '#00ff66'}; font-weight: bold;">[${status}]</span>`;
+    };
+
+    // 建立任務 HTML 模板
+    const createMissionHTML = (mission) => `
+        <div class="mission-item-card d-flex align-items-start gap-3">
+            <span style="color: #00ff66; font-weight: bold; white-space: nowrap;">&gt; ${mission.time}</span>
+            <span style="color: var(--text-muted); white-space: nowrap;">[${mission.dept}]</span>
+            <div style="color: #efeada; font-size: 0.9rem;">
+                ${getStatusBadge(mission.status)} ${mission.info}
+            </div>
+        </div>
+    `;
+
+    // 渲染第一輪原始數據
+    let htmlContent = scaMissions.map(createMissionHTML).join('');
+
+    // 【核心關鍵】複製一份一模一樣的數據接在後面，用來欺騙視覺，達成 HTML 無縫滾動
+    htmlContent += scaMissions.map(createMissionHTML).join('');
+
+    track.innerHTML = htmlContent;
+}
+
+// 確保網頁載入時跑這個初始化
+window.addEventListener('DOMContentLoaded', () => {
+    initMissionWall();
+});
