@@ -24,14 +24,23 @@
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#scaNav" aria-controls="scaNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="scaNav">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                <li class="nav-item"><a class="nav-link active" href="#world-view"><i class="fas fa-globe me-1"></i> 世界觀簡述</a></li>
-                <li class="nav-item"><a class="nav-link" href="#system-logic"><i class="fas fa-layer-group me-1"></i> 運作邏輯</a></li>
-                <li class="nav-item"><a class="nav-link" href="#forum"><i class="fas fa-comments me-1"></i> 內部留言板</a></li>
-                <li class="nav-item"><a class="nav-link return-home" href="index.html"><i class="fas fa-arrow-left me-1"></i> 返回作品集</a></li>
-            </ul>
-        </div>
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link active" href="#world-view"><i class="fas fa-globe me-1"></i> 世界觀簡述</a></li>
+
+            <!-- ✨ 改成下拉選單：核心邏輯與卷宗 -->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="logicDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fas fa-layer-group me-1"></i> 運作邏輯控制台
+                </a>
+                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="logicDropdown">
+                    <li><a class="dropdown-menu-item dropdown-item" href="#system-logic">底層規則與機制</a></li>
+                    <li><a class="dropdown-menu-item dropdown-item" href="#special-archive">特級管制觀測卷宗</a></li>
+                </ul>
+            </li>
+
+            <li class="nav-item"><a class="nav-link" href="#forum"><i class="fas fa-comments me-1"></i> 內部留言板</a></li>
+            <li class="nav-item"><a class="nav-link return-home" href="index.html"><i class="fas fa-arrow-left me-1"></i> 返回作品集</a></li>
+        </ul>
     </div>
 </nav>
 
@@ -229,10 +238,11 @@
 </section>
 
 <!-- ==========================================
-                 【新增】S.C.A. 核心特級管制觀測卷宗
+                 S.C.A. 核心特級管制觀測卷宗
                  ========================================== -->
-<div class="col-12 mt-4">
-    <div class="logic-card p-4 overflow-hidden" style="border-top: 4px solid var(--accent-warning);">
+<section id="special-archive" class="py-4 container">
+    <div class="col-12">
+        <div class="logic-card p-4 overflow-hidden" style="border-top: 4px solid var(--accent-warning);">
         <div class="logic-card-header mb-4 d-flex justify-content-between align-items-center">
             <div>
                 <h4 class="mb-1 fw-bold" style="color: #ff6b6b;"><i class="fas fa-folder-open me-2"></i>S.C.A. 特殊觀測檔案庫</h4>
@@ -319,7 +329,7 @@
 
         </div>
     </div>
-</div>
+</section>
 
 <!-- ==========================================
      S.C.A. 終端控制台 (觀測預警 & 擴充匿名留言板)
