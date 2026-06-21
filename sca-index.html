@@ -228,7 +228,98 @@
     </div>
 </section>
 
+<!-- ==========================================
+                 【新增】S.C.A. 核心特級管制觀測卷宗
+                 ========================================== -->
+<div class="col-12 mt-4">
+    <div class="logic-card p-4 overflow-hidden" style="border-top: 4px solid var(--accent-warning);">
+        <div class="logic-card-header mb-4 d-flex justify-content-between align-items-center">
+            <div>
+                <h4 class="mb-1 fw-bold" style="color: #ff6b6b;"><i class="fas fa-folder-open me-2"></i>S.C.A. 特殊觀測檔案庫</h4>
+                <small class="text-muted">分類標籤：【特級管制 / 混沌源能 & 超脫者生態】</small>
+            </div>
+            <span class="badge text-bg-danger" style="font-size: 0.75rem;">SECURITY LEVEL: MAXIMUM</span>
+        </div>
 
+        <p class="logic-text-sm text-muted mb-4">
+            <i class="fas fa-circle-info me-1"></i> <strong>概述：</strong> 本檔案專門收錄「超越單一世界規則束縛、具備自由穿梭時空能力」之特殊個體。此類個體或具備創世級源能，或屬於法規之外的因果特異點。S.C.A. 對此類個體的標準作業程序（SOP）為：禁止採取強制性物理干涉 ➔ 優先鎖定其情感/行為錨點 ➔ 依據個體動態進行周邊降噪與善後協調。
+        </p>
+
+        <!-- 觀測對象手風琴外殼 (Accordion) -->
+        <div class="accordion sca-accordion" id="obsFiles">
+
+            <!-- 對象 A & B -->
+            <div class="accordion-item" style="background: transparent; border: 1px solid var(--border-color);">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed fw-bold text-start" type="button" data-bs-toggle="collapse" data-bs-target="#obs-ab" style="background: rgba(0,0,0,0.2); color: var(--text-primary);">
+                        <i class="fas fa-user-shield me-2 text-warning"></i> 觀測對象 A & B：Vesper (某葉) ⇄ 葉沐風
+                    </button>
+                </h2>
+                <div id="obs-ab" class="accordion-collapse collapse" data-bs-parent="#obsFiles">
+                    <div class="accordion-body logic-text" style="background: rgba(0,0,0,0.1);">
+                        <div class="mb-2"><strong style="color: #ff6b6b;">Vesper (某葉)：</strong>威脅級別【極高 (Vesper Lancrea)】。行事風格難以預測，情感波動曾引發時空永久性能流連結。屬於重點監控對象。</div>
+                        <div><strong style="color: var(--accent-amber);">葉沐風：</strong>威脅級別【可控】。曾任天族族長，展現出極強的「秩序感」與自律性。行為邏輯更符合理性預期，屬於令管理局相對「省心」的觀測對象。</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 對象 C -->
+            <div class="accordion-item" style="background: transparent; border: 1px solid var(--border-color);">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#obs-c" style="background: rgba(0,0,0,0.2); color: var(--text-primary);">
+                        <i class="fas fa-cat me-2 text-info"></i> 觀測對象 C：幽逸雨 (喵幽)
+                    </button>
+                </h2>
+                <div id="obs-c" class="accordion-collapse collapse" data-bs-parent="#obsFiles">
+                    <div class="accordion-body logic-text-sm" style="background: rgba(0,0,0,0.1);">
+                        <div class="mb-2"><strong>威脅級別：</strong><span class="text-warning fw-bold">【未知 / 隨機性破壞】</span></div>
+                        <p class="mb-2 text-white"><strong>評估摘要：</strong>行蹤飄忽，無法以常規邏輯預測其動向。其能量特徵與 Vesper 高度相似，且具備極強的隨機干涉力。若在任務中偶遇，切勿正面衝突，避免引發不必要的時空漣漪。</p>
+                        <div class="p-2 rounded" style="background: rgba(52, 152, 219, 0.1); border-left: 2px solid #3498db;">
+                            <strong class="text-info">📌 專屬維序方案：</strong> 經局內高階權限覆寫判定，該個體實為 Vesper 的核心情感錨點。若觀測到其情緒或行為有失控前兆，維序官應立刻通知「葉沐風」先生出面進行「泡茶規勸」。一旦葉沐風在場，該個體會瞬間退化為無害的低威脅貓咪狀態。
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 對象 D -->
+            <div class="accordion-item" style="background: transparent; border: 1px solid var(--border-color);">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#obs-d" style="background: rgba(0,0,0,0.2); color: var(--text-primary);">
+                        <i class="fas fa-mask me-2 text-purple" style="color: var(--moan-purple);"></i> 觀測對象 D：墨淵 (Malice Anomaly)
+                    </button>
+                </h2>
+                <div id="obs-d" class="accordion-collapse collapse" data-bs-parent="#obsFiles">
+                    <div class="accordion-body logic-text-sm" style="background: rgba(0,0,0,0.1);">
+                        <div class="mb-2"><strong>威脅級別：</strong><span class="text-danger fw-bold">【特級未知 / 法規之外的空白異常】</span></div>
+                        <p class="mb-2 text-white"><strong>評估摘要：</strong>來源不明的墮神、災厄觀測者，現於目標世界以職業偵探自居。本質為「混亂善良」，不以毀滅時空為目的，但極度熱衷於以「紛爭與不幸」為樂。具備恐怖的「情緒引導與增幅」權能，且擁有「無損再生」的非人結構。</p>
+                        <div class="p-2 rounded" style="background: rgba(147, 112, 219, 0.1); border-left: 2px solid var(--moan-purple);">
+                            <strong style="color: var(--moan-purple);">📌 專屬維序方案：</strong> 該個體與 Vesper 處於某種「不死的博弈」狀態。嚴禁強行干涉其惡作劇，這高機率會演變成兩位神祇的幼稚賭氣，進而震碎局部時間線。正確的 SOP 為：不打擾其看戲、不沒收其魷魚乾、並在其現身周邊提前部署「因果阻隔柵欄」以保護世界原住民（如墨霖·商、方曦佟）。
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 對象 E -->
+            <div class="accordion-item" style="background: transparent; border: 1px solid var(--border-color);">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#obs-e" style="background: rgba(0,0,0,0.2); color: var(--text-primary);">
+                        <i class="fas fa-rabbit me-2" style="color: var(--bonnie-pink);"></i> 觀測對象 E：蓓妮·克利斯多夫
+                    </button>
+                </h2>
+                <div id="obs-e" class="accordion-collapse collapse" data-bs-parent="#obsFiles">
+                    <div class="accordion-body logic-text-sm" style="background: rgba(0,0,0,0.1);">
+                        <div class="mb-2"><strong>威脅級別：</strong><span class="text-success fw-bold">【技術性特例 / 潛在威脅（低）】</span></div>
+                        <p class="mb-2 text-white"><strong>評估摘要：</strong>原生於阿卡亞世界的普通人類，因長期接觸 Vesper，其靈魂被 Vesper 的「混沌」屬性浸染與改造，因禍得福成為極少數能「直視並承受時空之力」的原創人類。目前具備高超的駭客技術，常以「兔子 Bammie」的身分與局內進行非官方的技術博弈。</p>
+                        <div class="p-2 rounded" style="background: rgba(255, 182, 193, 0.1); border-left: 2px solid var(--bonnie-pink);">
+                            <strong style="color: var(--bonnie-pink);">📌 專屬維序方案：</strong> 因其具備獨立研發遊戲的「合理變現資金需求」，若發現其駭入 S.C.A. 防火牆或走私虛擬帳戶，建議睜一隻眼閉一隻眼。強行攔截高機率導致局內所有操作介面被其強制改寫為「草莓賽博兔」或「芭比粉色」。
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
 
 <section id="forum" class="py-5" style="background-color: var(--sca-bg);">
     <div class="container">
