@@ -556,3 +556,14 @@ body {
     box-shadow: none !important;
     border-color: var(--accent-amber) !important;
 }
+/* 下拉選單項目的 hover 效果 */
+.dropdown-item {
+    color: #e0e0e0 !important;
+    transition: all 0.25s ease;
+}
+
+.dropdown-item:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    color: #fff !important;
+    padding-left: 1.5rem; /* 滑鼠移入時往右縮進的小動態 */
+}
