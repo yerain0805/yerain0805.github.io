@@ -538,3 +538,21 @@ body {
 .bbs-stream::-webkit-scrollbar-thumb:hover {
     background: #444;
 }
+/* S.C.A. 專用折疊檔案庫美化 */
+.sca-accordion .accordion-item {
+    margin-bottom: 8px;
+    border-radius: 4px !important;
+    overflow: hidden;
+}
+.sca-accordion .accordion-button::after {
+    filter: invert(1); /* 讓箭頭變白色 */
+}
+.sca-accordion .accordion-button:not(.collapsed) {
+    background-color: rgba(214, 175, 55, 0.1) !important;
+    color: var(--accent-amber) !important;
+    box-shadow: none !important;
+}
+.sca-accordion .accordion-button:focus {
+    box-shadow: none !important;
+    border-color: var(--accent-amber) !important;
+}
