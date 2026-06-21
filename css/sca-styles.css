@@ -632,3 +632,133 @@ body {
         transform: translateY(-50%); /* 滾動到總高度的一半時，無縫彈回 0 */
     }
 }
+
+/* ==========================================
+   方案四：兔子 Bammie 惡作劇專用 CSS
+   ========================================== */
+/* 右下角浮動兔子樣式 */
+.bammie-bunny-trigger {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 45px;
+    height: 45px;
+    background: rgba(26, 26, 26, 0.85);
+    border: 1px dashed rgba(255, 182, 193, 0.4);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    font-size: 1.25rem;
+    cursor: pointer;
+    z-index: 999;
+    transition: all 0.3s ease;
+}
+
+.bammie-bunny-trigger:hover {
+    color: #ffb6c1;
+    border-color: #ffb6c1;
+    transform: scale(1.1) rotate(-15deg);
+    box-shadow: 0 0 15px rgba(255, 182, 193, 0.4);
+}
+
+/* 惡作劇強行覆蓋的草莓賽博粉主題（當被 JavaScript 激活時） */
+body.bammie-hacked-mode {
+    --bg-dark: #2c1a1f !important;          /* 帶著微暗草莓紅的深夜底色 */
+    --bg-terminal: #351f25 !important;      /* 賽博草莓控制台 */
+    --card-bg: #42262e !important;          /* 卡片背景轉為暗粉 */
+    --border-color: #ffb6c1 !important;      /* 邊框全面芭比粉 */
+    --accent-amber: #ffb6c1 !important;      /* 核心金色被篡改為蓓妮粉 */
+
+    /* 呼應不對稱染與異色瞳的雙色細節 */
+    --miaoyou-orange: #f1c40f !important;    /* 左黃 */
+    --youmingjin-blue: #ff7675 !important;   /* 右粉 */
+}
+
+/* 網頁被入侵時的霓虹閃爍環境燈（杜絕純白，走向粉黑） */
+body.bammie-hacked-mode::after {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    box-shadow: inset 0 0 80px rgba(255, 182, 193, 0.15);
+    pointer-events: none;
+    z-index: 9999;
+}
+
+/* 全息對話框遮罩 */
+.bammie-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(10, 5, 7, 0.85);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+}
+
+/* 駭客控制台視窗 */
+.bammie-terminal-box {
+    width: 90%;
+    max-width: 480px;
+    background: #251318;
+    border: 2px solid #ffb6c1;
+    border-radius: 8px;
+    box-shadow: 0 0 30px rgba(255, 182, 193, 0.3);
+    overflow: hidden;
+    animation: bammiePop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.bammie-box-header {
+    background: #1a0c10;
+    padding: 10px 15px;
+    border-bottom: 1px solid #ffb6c1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: monospace;
+    font-size: 0.85rem;
+    color: #ffb6c1;
+}
+
+.bammie-dots span {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: #ff5f56;
+    border-radius: 50%;
+    margin-left: 5px;
+}
+
+.bammie-avatar-frame {
+    width: 65px;
+    height: 65px;
+    border: 2px solid #ffb6c1;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    background: rgba(255, 182, 193, 0.1);
+    box-shadow: 0 0 12px rgba(255, 182, 193, 0.2);
+}
+
+/* 草莓大福按鈕 */
+.btn-strawberry {
+    background: transparent;
+    border: 2px solid #ffb6c1;
+    color: #ffb6c1;
+    transition: all 0.3s ease;
+}
+
+.btn-strawberry:hover {
+    background: #ffb6c1;
+    color: #251318;
+    box-shadow: 0 0 15px rgba(255, 182, 193, 0.5);
+}
+
+@keyframes bammiePop {
+    from { transform: scale(0.85); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
