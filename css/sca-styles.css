@@ -1,14 +1,29 @@
 /* ==========================================
-   S.C.A. 專用全域變數與重設
+   S.C.A. 終端機全域變數與重設
    ========================================== */
 :root {
-    --bg-dark: #1a1a1a;          /* 深色背景 */
-    --bg-terminal: #242424;      /* 終端機卡片色 */
-    --text-primary: #efeada;     /* 沿用你喜歡的溫潤燕麥白 */
-    --text-muted: #a0a0a0;       /* 莫蘭迪灰（低調文字） */
+    /* 核心底色 */
+    --bg-dark: #121212;          /* 杜絕純白的暗夜底色 */
+    --bg-terminal: #161616;      /* 終端機控制台底色 */
+    --card-bg: #1e1e1e;          /* 卡片區塊底色 */
+    --border-color: #3a3a3a;      /* 標準邊框線條 */
+
+    /* 文字顏色 */
+    --text-primary: #efeada;     /* 溫潤燕麥白（主要文字） */
+    --text-muted: #a0a0a0;       /* 莫蘭迪灰（低調/次要文字） */
+
+    /* 世界觀陣營與角色專屬配色 */
     --accent-amber: #d4af37;     /* 秩序之光金 */
     --accent-warning: #ff3b30;   /* Vesper Alarm 警報紅 */
-    --border-color: #3a3a3a;     /* 邊框線條 */
+    --vesper-red: #8b0000;       /* Vesper 深紅 */
+    --miaoyou-orange: #ff6700;   /* 喵優橘 */
+    --mufeng-gold: #d4af37;      /* 沐風金 */
+    --bonnie-pink: #ffb6c1;      /* 蓓妮粉 */
+    --moan-purple: #9370db;      /* 莫蘭迪紫/墨淵紫 */
+    --morandi-gray: #7e8c8d;     /* 專屬莫蘭迪灰器材色調 */
+
+    /* 全域動畫變數 */
+    --hover-shadow: 0 4px 15px rgba(214, 175, 55, 0.25);
 }
 
 body {
@@ -25,6 +40,13 @@ body {
     background-color: rgba(26, 26, 26, 0.95);
     border-bottom: 2px solid var(--border-color);
     backdrop-filter: blur(10px);
+    transition: padding 0.3s ease, background-color 0.3s ease;
+}
+
+.sca-navbar.navbar-shrink {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: rgba(12, 12, 12, 0.98); /* 滾動後背景變更深 */
 }
 
 .sca-logo {
@@ -58,6 +80,18 @@ body {
     color: var(--bg-dark) !important;
 }
 
+/* 下拉選單項目的 hover 效果 */
+.dropdown-item {
+    color: #e0e0e0 !important;
+    transition: all 0.25s ease;
+}
+
+.dropdown-item:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    color: #fff !important;
+    padding-left: 1.5rem; /* 滑鼠移入時往右縮進的小動態 */
+}
+
 /* ==========================================
    S.C.A. 主視覺區 (Hero)
    ========================================== */
@@ -65,7 +99,6 @@ body {
     height: 100vh;
     position: relative;
     background-color: #121212;
-    /* 這裡你可以放一張有高科技網格或雙生時空的暗色背景圖 */
     background-image: linear-gradient(rgba(26, 26, 26, 0.8), rgba(26, 26, 26, 0.95));
 }
 
@@ -111,25 +144,6 @@ body {
     letter-spacing: 1px;
 }
 
-/* 警報閃爍特效框 */
-.vesper-warning-box {
-    max-width: 600px;
-    background-color: rgba(255, 59, 48, 0.08);
-    border: 1px dashed var(--accent-warning);
-    padding: 12px 20px;
-    font-size: 0.9rem;
-    color: #ff6b6b;
-    border-radius: 6px;
-}
-
-.animate-blink {
-    animation: blinker 1.5s linear infinite;
-}
-
-@keyframes blinker {
-    50% { opacity: 0; }
-}
-
 /* 核心按鈕 */
 .sca-btn-primary {
     background: transparent;
@@ -148,32 +162,62 @@ body {
     box-shadow: 0 0 20px rgba(239, 234, 218, 0.4);
 }
 
-:root {
-    --sca-bg: #121212; /* 杜絕純白的暗夜底色 */
-    --card-bg: #1e1e1e;
-    --morandi-gray: #7e8c8d; /* 專屬莫蘭迪灰器材色調 */
-    --vesper-red: #8b0000;
-    --miaoyou-orange: #ff6700;
-    --mufeng-gold: #d4af37;
-    --bonnie-pink: #ffb6c1;
-    --moan-purple: #9370db;
-}
-
-body {
-    background-color: var(--sca-bg);
-    color: #e0e0e0;
-    font-family: 'PingFang TC', sans-serif;
-}
-
+/* ==========================================
+   S.C.A. 終端機系統主容器與公告
+   ========================================== */
 .sca-system-container {
     width: 100%;
     max-width: 100%;
     margin: 15px 0;
     border: 1px solid var(--morandi-gray);
     border-radius: 8px;
-    background: #161616;
+    background: var(--bg-terminal);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
     overflow: hidden;
+}
+
+/* 頂部三個點小裝飾 */
+.terminal-dots span {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+}
+.dot-red { background: #ff5f56; }
+.dot-yellow { background: #ffbd2e; }
+.dot-green { background: #27c93f; }
+
+/* 警報閃爍特效框 */
+.vesper-warning-box {
+    max-width: 600px;
+    background-color: rgba(255, 59, 48, 0.08);
+    border: 1px dashed var(--accent-warning);
+    padding: 12px 20px;
+    font-size: 0.9rem;
+    color: #ff6b6b;
+    border-radius: 6px;
+}
+
+.sca-alert-banner {
+    background: rgba(230, 126, 34, 0.15); /* 橙色半透明 */
+    border-bottom: 1px solid #e67e22;
+    color: #f39c12;
+    padding: 6px 15px;
+    font-size: 0.85rem;
+    font-family: monospace;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.alert-tag {
+    background: #e67e22;
+    color: #fff;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-weight: bold;
+    white-space: nowrap;
+    animation: blinker 1.5s infinite; /* 統一使用同一組閃爍 Keyframe */
 }
 
 /* 跑馬燈公告 */
@@ -183,18 +227,31 @@ body {
     padding: 8px;
     overflow: hidden;
 }
+
 .ticker-text {
     white-space: nowrap;
     animation: ticker 25s linear infinite;
     color: #ff6b6b;
     font-size: 0.9rem;
 }
+
 @keyframes ticker {
     0% { transform: translate3d(100%, 0, 0); }
     100% { transform: translate3d(-100%, 0, 0); }
 }
 
-/* 留言卡片片區 */
+.animate-blink {
+    animation: blinker 1.5s linear infinite;
+}
+
+@keyframes blinker {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+
+/* ==========================================
+   匿名留言板區 (BBS Stream)
+   ========================================== */
 .post-card {
     background: var(--card-bg);
     border: 1px solid #2c2c2c;
@@ -202,21 +259,38 @@ body {
     margin: 15px;
     padding: 15px;
     border-radius: 4px;
-    cursor: pointer;
-    transition: transform 0.2s, var(--hover-shadow) 0.3s; /* 使用你設定的 hover 特效 */
+    transition: transform 0.2s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
+
 .post-card:hover {
     transform: translateY(-2px);
     border-color: var(--mufeng-gold);
-    box-shadow: 0 4px 12px rgba(212, 169, 55, 0.2);
-    --hover-shadow: 0 4px 15px rgba(214, 175, 55, 0.25); /* 補上變數 */
-    transition: transform 0.2s, box-shadow 0.3s, border-color 0.3s;
+    box-shadow: var(--hover-shadow);
+}
+
+/* 增加多元貼文左邊框識別度（避免被預設樣式蓋掉） */
+.post-card.bonnie-border { border-left-color: var(--bonnie-pink) !important; }
+.post-card.moan-border { border-left-color: var(--moan-purple) !important; }
+
+/* 內滾動條美化（留言板代碼流） */
+.bbs-stream::-webkit-scrollbar {
+    width: 6px;
+}
+.bbs-stream::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+}
+.bbs-stream::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 3px;
+}
+.bbs-stream::-webkit-scrollbar-thumb:hover {
+    background: #444;
 }
 
 /* 核心吐槽對話框樣式 */
 .complaint-box {
     margin-top: 10px;
-    display: none; /* 預設先隱藏，點擊後再由 JS 改為 flex */
+    display: none;
     flex-direction: column;
     gap: 8px;
 }
@@ -230,18 +304,17 @@ body {
     animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-/* 各角色吐槽對話框的專屬配色 */
+/* 各角色吐槽對話框專屬配色 */
 .bubble.vesper { background: #2c1a1a; border: 1px solid var(--vesper-red); color: #ffb3b3; align-self: flex-start; }
 .bubble.miaoyou { background: #2c221a; border: 1px solid var(--miaoyou-orange); color: #ffd1b3; align-self: flex-end; }
 .bubble.mufeng { background: #1a242c; border: 1px solid #3498db; color: #b3d9ff; align-self: flex-start; }
 .bubble.youmingjin { background: #201a24; border: 1px solid var(--moan-purple); color: #e6ccff; align-self: flex-end; }
 .bubble.bonnie { background: #22251a; border: 1px solid #9acd32; color: #e2f4c5; align-self: flex-start; }
-/* 新增：資深維序官 A 的對話框專屬配色（神祕低調的深灰底 + 秩序淡金邊） */
 .bubble.senior-a {
     background: #242526;
-    border: 1px dashed var(--accent-amber); /* 虛線邊框，暗示檔案已被屏蔽 */
+    border: 1px dashed var(--accent-amber);
     color: #b0b3b8;
-    align-self: flex-start; /* 靠左顯示 */
+    align-self: flex-start;
     opacity: 0.9;
     box-shadow: 0 0 8px rgba(214, 175, 55, 0.1);
 }
@@ -250,8 +323,9 @@ body {
     from { opacity: 0; transform: scale(0.9) translateY(10px); }
     to { opacity: 1; transform: scale(1) translateY(0); }
 }
+
 /* ==========================================
-   方案 2：雙生圖卡專用動態特效
+   雙生圖卡與全息掃描特效
    ========================================== */
 .world-card-preview-wrapper {
     position: relative;
@@ -282,13 +356,10 @@ body {
     filter: brightness(1.1);
 }
 
-/* 模擬 S.C.A. 終端全息掃描線線條 */
+/* 全息掃描線線條 */
 .img-scan-line {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 3px;
+    top: 0; left: 0; width: 100%; height: 3px;
     background: linear-gradient(90deg, transparent, var(--accent-amber), transparent);
     opacity: 0.7;
     pointer-events: none;
@@ -308,13 +379,9 @@ body {
     background: rgba(45, 45, 45, 0.9) !important;
     transform: translateX(5px);
 }
-.sca-navbar.navbar-shrink {
-    padding-top: 5px;
-    padding-bottom: 5px;
-    background-color: rgba(18, 18, 18, 0.98); /* 滾動後背景變更深 */
-}
+
 /* ==========================================
-   S.C.A. 運作邏輯控制台專用 CSS
+   S.C.A. 運作邏輯控制台
    ========================================== */
 .logic-card {
     width: 100%;
@@ -334,7 +401,6 @@ body {
     transform: translateY(-2px);
 }
 
-/* 圖標外圈 */
 .logic-icon-wrapper {
     width: 45px;
     height: 45px;
@@ -343,13 +409,12 @@ body {
     align-items: center;
     justify-content: center;
     font-size: 1.2rem;
-    color: #ffffff !important; /* 強制圖標為白色 */
+    color: #ffffff !important;
 }
 .rule-bg { background: linear-gradient(135deg, #2c3e50, #3498db); border: 1px solid #54a0ff; }
 .consciousness-bg { background: linear-gradient(135deg, #4c1c1c, #ff4757); border: 1px solid #ff6b81; }
 .gap-bg { background: linear-gradient(135deg, #5f27cd, #341f97); border: 1px solid #9b5de5; }
 
-/* 字體與狀態 */
 .text-matrix {
     font-family: monospace;
     font-size: 0.75rem;
@@ -360,14 +425,14 @@ body {
 
 .logic-text {
     font-size: 0.9rem;
-    color: #efeada !important; /* 使用溫潤燕麥白，確保看得很清楚 */
+    color: #efeada !important;
     line-height: 1.6;
 }
 
 .logic-text-sm {
     font-size: 0.82rem;
     line-height: 1.5;
-    color: #a0a0a0 !important; /* 莫蘭迪灰次要字 */
+    color: #a0a0a0 !important;
 }
 
 .logic-status {
@@ -379,7 +444,6 @@ body {
     border-top: 1px solid #2c2c2c;
 }
 
-/* 狀態閃爍小點 */
 .status-dot {
     display: inline-block;
     width: 8px;
@@ -390,18 +454,16 @@ body {
 .status-dot.online { background-color: #2ed573; box-shadow: 0 0 8px #2ed573; }
 .status-dot.warning { background-color: #ff4757; box-shadow: 0 0 8px #ff4757; }
 
-/* 核心關鍵：徹底拯救被吃掉的 Nav Pills 頁籤顏色 */
-.sca-pills {
-    border-bottom: none !important;
-}
-
+/* ==========================================
+   控制台分頁（Nav Pills 與 Terminal Tabs）
+   ========================================== */
 .sca-pills .nav-item {
     margin-right: 8px;
 }
 
 .sca-pills .nav-link {
-    color: #a0a0a0 !important; /* 未選中時是清楚的莫蘭迪灰 */
-    background-color: rgba(255, 255, 255, 0.03) !important; /* 帶有一點點微弱的暗底色 */
+    color: #a0a0a0 !important;
+    background-color: rgba(255, 255, 255, 0.03) !important;
     border: 1px solid #333333 !important;
     font-size: 0.88rem;
     padding: 8px 16px !important;
@@ -410,113 +472,32 @@ body {
 
 .sca-pills .nav-link:hover {
     border-color: var(--accent-amber) !important;
-    color: #efeada !important; /* 懸浮時變燕麥白 */
+    color: #efeada !important;
     background-color: rgba(214, 175, 55, 0.05) !important;
 }
 
-/* 當頁籤被選中激活 (Active) 時的專屬高亮高科技配色 */
 .sca-pills .nav-link.active {
-    background-color: rgba(214, 175, 55, 0.15) !important; /* 淡淡的金色半透明底 */
-    color: var(--accent-amber) !important; /* 秩序之光金字 */
+    background-color: rgba(214, 175, 55, 0.15) !important;
+    color: var(--accent-amber) !important;
     border: 1px solid var(--accent-amber) !important;
     text-shadow: 0 0 5px rgba(214, 175, 55, 0.5);
     box-shadow: inset 0 0 8px rgba(214, 175, 55, 0.1);
 }
 
-/* 確保頁籤內容的文字顏色也是亮的 */
-.tab-pane {
-    color: #efeada !important;
-}
-.tab-pane h5 {
-    font-weight: 600;
-}
-/* 優化：讓進度條上方的文字在手機板自動換行，在大螢幕左右對齊 */
-@media (max-width: 576px) {
-    .gap-monitor-box .d-flex {
-        flex-direction: column !important; /* 手機版時，文字上下堆疊，不往右死撐 */
-        align-items: flex-start !important;
-        gap: 5px;
-    }
-}
-/* ==========================================
-   S.C.A. 終端介面特殊 Bug 修正案
-   ========================================== */
-
-/* 修正一：解決中立者報酬系統文字在手機/窄螢幕被切掉的問題 */
-.tab-content {
-    word-wrap: break-word !important;
-    word-break: break-word !important; /* 優先使用更友善的斷行 */
-}
-
-.tab-content .badge {
-    white-space: normal !important;   /* 關鍵：允許 badge 內部的長文字自動換行 */
-    text-align: start !important;     /* 換行後靠左對齊 */
-    line-height: 1.5 !important;      /* 增加換行後的行高，避免字擠在一起 */
-    display: inline-block !important; /* 確保寬度自適應 */
-    width: 100% !important;           /* 在窄螢幕下撐滿容器以利換行 */
-    max-width: 100% !important;
-}
-
-/* 修正二：拯救徹底隱形變黑的登錄名冊副標題文字 */
-.logic-card-header .text-muted,
-.logic-card-header small {
-    color: #a0a0a0 !important;        /* 強制指定明亮的莫蘭迪灰 */
-    display: block !important;        /* 確保獨佔一行，不會跟標題擠在一起 */
-    margin-top: 5px !important;       /* 與主標題保持安全微調距離 */
-    opacity: 0.85 !important;         /* 保持次要標題的層次感 */
-}
-.sca-alert-banner {
-    background: rgba(230, 126, 34, 0.15); /* 橙色半透明 */
-    border-bottom: 1px solid #e67e22;
-    color: #f39c12;
-    padding: 6px 15px;
-    font-size: 0.85rem;
-    font-family: monospace;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-.alert-tag {
-    background: #e67e22;
-    color: #fff;
-    padding: 2px 6px;
-    border-radius: 3px;
-    font-weight: bold;
-    white-space: nowrap;
-    animation: blink 1.5s infinite; /* 讓警報標籤閃爍 */
-}
-@keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.4; }
-}
-
-/* ==========================================
-   S.C.A. 終端控制台專用追加樣式
-   ========================================== */
-
-/* 終端頂部三個點小裝飾 */
-.terminal-dots span {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    display: inline-block;
-}
-.dot-red { background: #ff5f56; }
-.dot-yellow { background: #ffbd2e; }
-.dot-green { background: #27c93f; }
-
-/* 終端分頁頁籤美化 */
 .sca-terminal-tabs .nav-link {
     border: none !important;
     background: transparent !important;
     font-size: 0.9rem;
     padding: 10px 20px !important;
     border-radius: 0 !important;
+    color: var(--text-muted) !important;
     transition: all 0.3s ease;
 }
+
 .sca-terminal-tabs .nav-link:hover {
     color: var(--text-primary) !important;
 }
+
 .sca-terminal-tabs .nav-link.active {
     color: var(--accent-amber) !important;
     border-bottom: 2px solid var(--accent-amber) !important;
@@ -524,46 +505,74 @@ body {
     text-shadow: 0 0 5px rgba(214, 175, 55, 0.3);
 }
 
-/* 內滾動條美化（防爆版面，讓留言板像真正終端代碼流） */
-.bbs-stream::-webkit-scrollbar {
-    width: 6px;
+.tab-pane {
+    color: #efeada !important;
 }
-.bbs-stream::-webkit-scrollbar-track {
-    background: rgba(0, 0, 0, 0.1);
+
+.tab-pane h5 {
+    font-weight: 600;
 }
-.bbs-stream::-webkit-scrollbar-thumb {
-    background: #333;
-    border-radius: 3px;
+
+/* ==========================================
+   RWD 響應式邊界防爆排版優化
+   ========================================== */
+.tab-content {
+    word-wrap: break-word !important;
+    word-break: break-word !important;
 }
-.bbs-stream::-webkit-scrollbar-thumb:hover {
-    background: #444;
+
+.tab-content .badge {
+    white-space: normal !important;
+    text-align: start !important;
+    line-height: 1.5 !important;
+    display: inline-block !important;
+    width: auto !important;
+    max-width: 100% !important;
 }
-/* S.C.A. 專用折疊檔案庫美化 */
+
+.logic-card-header .text-muted,
+.logic-card-header small {
+    color: #a0a0a0 !important;
+    display: block !important;
+    margin-top: 5px !important;
+    opacity: 0.85 !important;
+}
+
+@media (max-width: 576px) {
+    .gap-monitor-box .d-flex {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 5px;
+    }
+}
+
+/* ==========================================
+   S.C.A. 專用折疊檔案庫美化 (Accordion)
+   ========================================== */
 .sca-accordion .accordion-item {
     margin-bottom: 8px;
     border-radius: 4px !important;
     overflow: hidden;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
 }
+
+.sca-accordion .accordion-button {
+    background-color: var(--bg-terminal);
+    color: var(--text-primary);
+}
+
 .sca-accordion .accordion-button::after {
-    filter: invert(1); /* 讓箭頭變白色 */
+    filter: invert(1);
 }
+
 .sca-accordion .accordion-button:not(.collapsed) {
     background-color: rgba(214, 175, 55, 0.1) !important;
     color: var(--accent-amber) !important;
     box-shadow: none !important;
 }
+
 .sca-accordion .accordion-button:focus {
     box-shadow: none !important;
     border-color: var(--accent-amber) !important;
-}
-/* 下拉選單項目的 hover 效果 */
-.dropdown-item {
-    color: #e0e0e0 !important;
-    transition: all 0.25s ease;
-}
-
-.dropdown-item:hover {
-    background-color: rgba(255, 255, 255, 0.1) !important;
-    color: #fff !important;
-    padding-left: 1.5rem; /* 滑鼠移入時往右縮進的小動態 */
 }
