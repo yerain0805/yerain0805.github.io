@@ -83,6 +83,44 @@
     </div>
 </header>
 
+<!-- ===============================
+           滾動式終端機任務牆
+     =============================== -->
+<section id="terminal-missions" class="py-5" style="background-color: #141419; border-bottom: 1px solid var(--border-color);">
+    <div class="container">
+        <div class="text-center mb-4">
+            <span class="terminal-badge mb-2">S.C.A. MISSION LOGS</span>
+            <h2 class="text-uppercase fw-bold" style="color: var(--accent-amber); letter-spacing: 2px;">
+                <i class="fas fa-receipt me-2"></i>即時時空委託任務日誌
+            </h2>
+            <p style="color: var(--text-muted);">維序官即時派遣看板 // 滾動式動態終端牆</p>
+        </div>
+
+        <!-- 終端機外殼 -->
+        <div class="mission-terminal shadow-lg mx-auto" style="max-width: 900px; border: 1px solid #00ff66; border-radius: 6px; background-color: #050508; overflow: hidden;">
+            <!-- 終端機頂部控制條 -->
+            <div class="d-flex justify-content-between align-items-center p-2" style="background: #111; border-bottom: 1px solid #222;">
+                <div style="color: #00ff66; font-family: monospace; font-size: 0.8rem; letter-spacing: 1px;">
+                    <i class="fas fa-terminal me-2"></i>SECURE_CONNECTION_STABLE // STREAM_ON
+                </div>
+                <div class="d-flex gap-1.5">
+                    <span style="width: 8px; height: 8px; background: #ff5f56; border-radius: 50%;"></span>
+                    <span style="width: 8px; height: 8px; background: #ffbd2e; border-radius: 50%;"></span>
+                    <span style="width: 8px; height: 8px; background: #27c93f; border-radius: 50%;"></span>
+                </div>
+            </div>
+
+            <!-- 滾動任務核心容器 -->
+            <div class="mission-wall-container p-3" style="position: relative; height: 320px; overflow: hidden;">
+                <div class="mission-scanline"></div>
+                <div class="mission-scroll-track" id="mission-scroll-track">
+                    <!-- 任務卡片會由 JS 自動生成並從下方源源不絕地滾動上來 -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <section id="world-view" class="py-5" style="background-color: var(--bg-dark); border-bottom: 1px solid var(--border-color);">
     <div class="container">
         <div class="text-center mb-5">
