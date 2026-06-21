@@ -6,7 +6,7 @@
     --bg-dark: #121212;          /* 杜絕純白的暗夜底色 */
     --bg-terminal: #161616;      /* 終端機控制台底色 */
     --card-bg: #1e1e1e;          /* 卡片區塊底色 */
-    --border-color: #3a3a3a;      /* 標準邊框線條 */
+    --border-color: #3a3a3a;     /* 標準邊框線條 */
 
     /* 文字顏色 */
     --text-primary: #efeada;     /* 溫潤燕麥白（主要文字） */
@@ -20,6 +20,7 @@
     --mufeng-gold: #d4af37;      /* 沐風金 */
     --bonnie-pink: #ffb6c1;      /* 蓓妮粉 */
     --moan-purple: #9370db;      /* 莫蘭迪紫/墨淵紫 */
+    --jin-blue: #54a0ff;         /* 幽冥燼藍 */
     --morandi-gray: #7e8c8d;     /* 專屬莫蘭迪灰器材色調 */
 
     /* 全域動畫變數 */
@@ -34,8 +35,31 @@ body {
 }
 
 /* ==========================================
-   S.C.A. 終端導覽列樣式
+   S.C.A. 頂部警報與導覽列
    ========================================== */
+.sca-alert-banner {
+    background: rgba(230, 126, 34, 0.15); /* 橙色半透明 */
+    border-bottom: 1px solid #e67e22;
+    color: #f39c12;
+    padding: 6px 15px;
+    font-size: 0.85rem;
+    font-family: monospace;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.alert-tag {
+    background: #e67e22;
+    color: #fff;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-weight: bold;
+    white-space: nowrap;
+    animation: blinker 1.5s infinite;
+}
+
 .sca-navbar {
     background-color: rgba(26, 26, 26, 0.95);
     border-bottom: 2px solid var(--border-color);
@@ -46,7 +70,7 @@ body {
 .sca-navbar.navbar-shrink {
     padding-top: 5px;
     padding-bottom: 5px;
-    background-color: rgba(12, 12, 12, 0.98); /* 滾動後背景變更深 */
+    background-color: rgba(12, 12, 12, 0.98);
 }
 
 .sca-logo {
@@ -80,7 +104,6 @@ body {
     color: var(--bg-dark) !important;
 }
 
-/* 下拉選單項目的 hover 效果 */
 .dropdown-item {
     color: #e0e0e0 !important;
     transition: all 0.25s ease;
@@ -89,7 +112,7 @@ body {
 .dropdown-item:hover {
     background-color: rgba(255, 255, 255, 0.1) !important;
     color: #fff !important;
-    padding-left: 1.5rem; /* 滑鼠移入時往右縮進的小動態 */
+    padding-left: 1.5rem;
 }
 
 /* ==========================================
@@ -102,7 +125,6 @@ body {
     background-image: linear-gradient(rgba(26, 26, 26, 0.8), rgba(26, 26, 26, 0.95));
 }
 
-/* 模擬黑客終端機的背景微弱網格紋路 */
 .sca-hero::before {
     content: "";
     position: absolute;
@@ -144,7 +166,6 @@ body {
     letter-spacing: 1px;
 }
 
-/* 核心按鈕 */
 .sca-btn-primary {
     background: transparent;
     border: 2px solid var(--text-primary);
@@ -163,7 +184,7 @@ body {
 }
 
 /* ==========================================
-   S.C.A. 終端機系統主容器與公告
+   S.C.A. 終端機系統主容器
    ========================================== */
 .sca-system-container {
     width: 100%;
@@ -176,7 +197,12 @@ body {
     overflow: hidden;
 }
 
-/* 頂部三個點小裝飾 */
+.terminal-dots {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+
 .terminal-dots span {
     width: 10px;
     height: 10px;
@@ -187,7 +213,6 @@ body {
 .dot-yellow { background: #ffbd2e; }
 .dot-green { background: #27c93f; }
 
-/* 警報閃爍特效框 */
 .vesper-warning-box {
     max-width: 600px;
     background-color: rgba(255, 59, 48, 0.08);
@@ -198,29 +223,6 @@ body {
     border-radius: 6px;
 }
 
-.sca-alert-banner {
-    background: rgba(230, 126, 34, 0.15); /* 橙色半透明 */
-    border-bottom: 1px solid #e67e22;
-    color: #f39c12;
-    padding: 6px 15px;
-    font-size: 0.85rem;
-    font-family: monospace;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.alert-tag {
-    background: #e67e22;
-    color: #fff;
-    padding: 2px 6px;
-    border-radius: 3px;
-    font-weight: bold;
-    white-space: nowrap;
-    animation: blinker 1.5s infinite; /* 統一使用同一組閃爍 Keyframe */
-}
-
-/* 跑馬燈公告 */
 .sca-announcement {
     background: #2a1b1b;
     border-bottom: 1px solid var(--vesper-red);
@@ -250,7 +252,7 @@ body {
 }
 
 /* ==========================================
-   匿名留言板區 (BBS Stream)
+   匿名留言板區 (BBS Stream) 與卡片保護
    ========================================== */
 .post-card {
     background: var(--card-bg);
@@ -268,11 +270,16 @@ body {
     box-shadow: var(--hover-shadow);
 }
 
-/* 增加多元貼文左邊框識別度（避免被預設樣式蓋掉） */
-.post-card.bonnie-border { border-left-color: var(--bonnie-pink) !important; }
-.post-card.moan-border { border-left-color: var(--moan-purple) !important; }
+/* 角色專屬邊框高亮與 Hover 保護機制 */
+.post-card.bonnie-border { border-left: 4px solid var(--bonnie-pink) !important; }
+.post-card.bonnie-border:hover { border-color: var(--bonnie-pink) !important; }
 
-/* 內滾動條美化（留言板代碼流） */
+.post-card.moan-border { border-left: 4px solid var(--moan-purple) !important; }
+.post-card.moan-border:hover { border-color: var(--moan-purple) !important; }
+
+.post-card.jin-card { border-left: 4px solid var(--jin-blue) !important; }
+.post-card.jin-card:hover { border-color: var(--jin-blue) !important; }
+
 .bbs-stream::-webkit-scrollbar {
     width: 6px;
 }
@@ -304,7 +311,6 @@ body {
     animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-/* 各角色吐槽對話框專屬配色 */
 .bubble.vesper { background: #2c1a1a; border: 1px solid var(--vesper-red); color: #ffb3b3; align-self: flex-start; }
 .bubble.miaoyou { background: #2c221a; border: 1px solid var(--miaoyou-orange); color: #ffd1b3; align-self: flex-end; }
 .bubble.mufeng { background: #1a242c; border: 1px solid #3498db; color: #b3d9ff; align-self: flex-start; }
@@ -356,7 +362,6 @@ body {
     filter: brightness(1.1);
 }
 
-/* 全息掃描線線條 */
 .img-scan-line {
     position: absolute;
     top: 0; left: 0; width: 100%; height: 3px;
@@ -455,7 +460,7 @@ body {
 .status-dot.warning { background-color: #ff4757; box-shadow: 0 0 8px #ff4757; }
 
 /* ==========================================
-   控制台分頁（Nav Pills 與 Terminal Tabs）
+   控制台分頁頁籤
    ========================================== */
 .sca-pills .nav-item {
     margin-right: 8px;
@@ -514,7 +519,7 @@ body {
 }
 
 /* ==========================================
-   RWD 響應式邊界防爆排版優化
+   RWD 響應式與折疊面板 (Accordion)
    ========================================== */
 .tab-content {
     word-wrap: break-word !important;
@@ -546,9 +551,6 @@ body {
     }
 }
 
-/* ==========================================
-   S.C.A. 專用折疊檔案庫美化 (Accordion)
-   ========================================== */
 .sca-accordion .accordion-item {
     margin-bottom: 8px;
     border-radius: 4px !important;
