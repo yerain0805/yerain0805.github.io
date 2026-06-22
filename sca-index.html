@@ -703,6 +703,15 @@
         </div>
     </div>
 </div>
+<div id="bammie-scanning-modal" class="bammie-overlay" style="display: none; z-index: 10001;">
+    <div class="bammie-terminal-box p-4 text-center" style="max-width: 380px; border-color: #00ff66; background: #0d1b11;">
+        <h5 style="color: #00ff66; font-family: monospace;"><i class="fas fa-print fa-spin me-2"></i> [🍓 大福量子掃描中...]</h5>
+        <div class="progress my-3" style="height: 6px; background-color: #1a3322;">
+            <div id="scan-progress-bar" class="progress-bar progress-bar-striped progress-bar-animated bg-success" style="width: 0%"></div>
+        </div>
+        <p id="scan-status-text" class="small" style="color: #efeada; font-family: monospace;">正在辨識草莓大福的糖分與糯米比例...</p>
+    </div>
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="js/script.js"></script>

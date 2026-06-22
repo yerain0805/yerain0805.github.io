@@ -204,16 +204,51 @@ function initBammieEasterEgg() {
         console.warn("⚠️ S.C.A. ALERT: Unauthorized code block injected by 'Bammie'.");
     }
 
-    // 解除入侵：投餵草莓大福
+    // 解除入侵：投餵草莓大福（沉浸式 Gamification 升級版）
     feedBtn.addEventListener('click', () => {
-        overlay.style.animation = 'bammiePop 0.3s ease reverse forwards';
+        const scanModal = document.getElementById('bammie-scanning-modal');
+        const progressBar = document.getElementById('scan-progress-bar');
+        const statusText = document.getElementById('scan-status-text');
 
-        setTimeout(() => {
-            document.body.classList.remove('bammie-hacked-mode');
+        if (!scanModal || !progressBar || !statusText) {
+            // 防呆：如果抓不到新組件，就執行原本的直接解除
             overlay.style.display = 'none';
-            overlay.style.animation = ''; // 還原動畫
-            alert("Bammie：「草莓成分很純正，多謝款待。系統權限還給你們囉～(燦爛微笑)」");
-        }, 3000); // 留給回播動畫一點緩衝時間
+            document.body.classList.remove('bammie-hacked-mode');
+            return;
+        }
+
+        // 1. 隱藏原本的駭客大視窗，彈出「掃描中」小視窗
+        overlay.style.display = 'none';
+        scanModal.style.display = 'flex';
+
+        let progress = 0;
+        progressBar.style.width = '0%';
+        statusText.innerText = "> 偵測到有機物接近...啟動質譜儀掃描...";
+
+        // 2. 模擬黑客程式在動態分析大福
+        const scanInterval = setInterval(() => {
+            progress += 5;
+            progressBar.style.width = `${progress}%`;
+
+            // 根據進度條顯示超好玩的黑客反饋文案
+            if (progress === 30) {
+                statusText.innerText = "> [✓] 糖分含量 42% 檢測通過。符合蓓妮特調標準。";
+            } else if (progress === 60) {
+                statusText.innerText = "> [✓] 糯米皮Q彈度達標。偵測到整顆新鮮大草莓！";
+            } else if (progress === 90) {
+                statusText.innerText = "> [STATUS] 權限解鎖成功。正在撤回『草莓視覺污染』模組...";
+            }
+
+            // 3. 掃描完成，正式功德圓滿，恢復系統！
+            if (progress >= 100) {
+                clearInterval(scanInterval);
+                setTimeout(() => {
+                    scanModal.style.display = 'none'; // 關閉掃描視窗
+                    document.body.classList.remove('bammie-hacked-mode'); // 解除全站粉紅污染
+                    alert("🎉 [S.C.A. 系統提示]: 危機解除。防火牆已重啟，技術科的草莓警報已撤銷。謝謝您的投餵！");
+                }, 600);
+            }
+        }, 150); // 每 150 毫秒跑 5%，大約 3 秒掃描完成
     });
 }
 

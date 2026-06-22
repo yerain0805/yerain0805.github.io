@@ -692,8 +692,8 @@ body.bammie-hacked-mode::after {
 .bammie-overlay {
     position: fixed;
     top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(10, 5, 7, 0.85);
-    backdrop-filter: blur(8px);
+    background: radial-gradient(circle, rgba(37, 19, 24, 0.4) 0%, rgba(15, 10, 12, 0.7) 100%);
+    backdrop-filter: none !important;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -763,4 +763,27 @@ body.bammie-hacked-mode::after {
 @keyframes bammiePop {
     from { transform: scale(0.85); opacity: 0; }
     to { transform: scale(1); opacity: 1; }
+}
+/* ==========================================
+   Bammie 賽博草莓環境污染（彩蛋激活）
+   ========================================== */
+/* 激活時，全網頁色相旋轉 300 度，原本的藍色綠色通通會變成粉紫、粉紅色調 */
+body.bammie-hacked-mode {
+    filter: hue-rotate(300deg) contrast(1.1) !important;
+    transition: filter 2s ease-in-out; /* 2秒緩慢污染，沉浸感死角 */
+}
+
+/* 讓駭客畫面的字體強制變成等寬極客字體，更有改寫底層的感覺 */
+body.bammie-hacked-mode h1,
+body.bammie-hacked-mode h2,
+body.bammie-hacked-mode h3,
+body.bammie-hacked-mode h4,
+body.bammie-hacked-mode .navbar-brand {
+    font-family: 'Courier New', Courier, monospace !important;
+    letter-spacing: 1px;
+}
+
+/* 掃描進度條與特效樣式 */
+.progress-bar-animated {
+    transition: width 0.1s linear;
 }
