@@ -106,7 +106,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 /**
  * =========================================================================
- * 方案一：滾動式終端機任務牆 —— 數據載入與無縫複製控制
+ * 滾動式終端機任務牆 —— 數據載入與無縫複製控制
  * =========================================================================
  */
 const scaMissions = [
@@ -115,7 +115,8 @@ const scaMissions = [
     { time: "11:05:40", dept: "後勤整備裝備庫", status: "SYNCED", info: "[環境偽裝狀態] 概念武裝已自動偽裝為：鑲嵌寶石的鋼筆（魔法世界模式）。" },
     { time: "13:22:11", dept: "特級戰略部", status: "ALERT", info: "【警告】觀測到原始意識體 Vesper 低血糖指標接近臨界點，速將巧克力補給投遞至相應時空節點！" },
     { time: "15:45:00", dept: "技術科", status: "MONITOR", info: "檢測到防火牆遭受未授權干涉，偵測到微量草莓賽博兔代碼特徵，暫定為非惡意串門，予以放行。" },
-    { time: "17:10:33", dept: "外勤維序分隊", status: "STABLE", info: "已成功回收原初影界浮塵碎屑三枚，當前局部時空穩定度已回升至 94.2%。" }
+    { time: "17:10:33", dept: "外勤維序分隊", status: "STABLE", info: "已成功回收原初影界浮塵碎屑三枚，當前局部時空穩定度已回升至 94.2%。" },
+    { time: "23:59:59", dept: "全體維序分隊", status: "SLEEPING", info: "[全體通告] 今日份的時間線都縫好了，大家打卡下班，睡覺去！" }
 ];
 
 function initMissionWall() {
@@ -130,7 +131,8 @@ function initMissionWall() {
             SYNCED: '#0984e3',
             ALERT: '#ff9f43',
             MONITOR: '#fdcb6e',
-            STABLE: '#00b894'
+            STABLE: '#00b894',
+            SLEEPING: '#81ecec'
         };
         return `<span style="color: ${colors[status] || '#00ff66'}; font-weight: bold;">[${status}]</span>`;
     };
