@@ -7,7 +7,6 @@
     --bg-terminal: #161616;      /* 終端機控制台底色 */
     --card-bg: #1e1e1e;          /* 卡片區塊底色 */
     --border-color: #3a3a3a;     /* 標準邊框線條 */
-    --sca-bg: #161616;
 
     /* 文字顏色 */
     --text-primary: #efeada;     /* 溫潤燕麥白（主要文字） */
@@ -767,12 +766,6 @@ body.bammie-hacked-mode::after {
 /* ==========================================
    Bammie 賽博草莓環境污染（彩蛋激活）
    ========================================== */
-/* 激活時，全網頁色相旋轉 300 度，原本的藍色綠色通通會變成粉紫、粉紅色調 */
-body.bammie-hacked-mode {
-    filter: hue-rotate(300deg) contrast(1.1) !important;
-    transition: filter 2s ease-in-out; /* 2秒緩慢污染，沉浸感死角 */
-}
-
 /* 讓駭客畫面的字體強制變成等寬極客字體，更有改寫底層的感覺 */
 body.bammie-hacked-mode h1,
 body.bammie-hacked-mode h2,
