@@ -95,6 +95,7 @@ const scaMissions = [
     { time: "13:22:11", dept: "時空能流監測組", status: "ALERT", info: "【警告】觀測到原始意識體 Vesper 低血糖指標接近臨界點，速將巧克力補給投遞至相應時空節點！" },
     { time: "15:45:00", dept: "技術科", status: "MONITOR", info: "檢測到防火牆遭受未授權干涉，偵測到微量草莓賽博兔代碼特徵，暫定為非惡意串門，予以放行。" },
     { time: "17:10:33", dept: "外勤維序分隊", status: "STABLE", info: "已成功回收原初影界浮塵碎屑三枚，當前局部時空穩定度已回升至 94.2%。" },
+    { time: "22:46:12", dept: "網路安全科", status: "SUCCESS", info: "【CASE-897-B 結案】成功沒收霸總打火機並凍結其副卡，地脈危機解除。(兔子Bammie已扣款)"},
     { time: "23:59:59", dept: "全體維序分隊", status: "SLEEPING", info: "[全體通告] 今日份的時間線都縫好了，大家打卡下班，睡覺去！" }
 ];
 
