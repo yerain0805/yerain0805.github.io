@@ -83,11 +83,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-/**
- * =========================================================================
- * 滾動式終端機任務牆 —— 數據載入與無縫複製控制
- * =========================================================================
- */
+// 3. 即時委託任務日誌（擴充新事件）
 const scaMissions = [
     { time: "08:14:22", dept: "歷史遺物修復科", status: "WORKING", info: "[工作日誌] 首席實習生葉思冥正在縫補被創世神們吵架震碎的時間線...（怨念值 99%）" },
     { time: "09:30:15", dept: "管制觀測處", status: "WARNING", info: "⚠️ 幽冥燼卡片警告：嚴禁在此觀測對象面前拿出醫療針劑或蔬果汁！" },
@@ -142,11 +138,7 @@ window.addEventListener('DOMContentLoaded', () => {
     initMissionWall();
 });
 
-/**
- * =========================================================================
- * 兔子 Bammie 的網頁惡作劇（最強彩蛋計數與覆寫機制）
- * =========================================================================
- */
+// 4. 兔子 Bammie 的網頁惡作劇
 function initBammieEasterEgg() {
     const bunnyBtn = document.getElementById('bammie-hacker-bunny');
     const overlay = document.getElementById('bammie-popup-overlay');
