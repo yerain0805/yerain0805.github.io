@@ -517,7 +517,7 @@
 
             <!-- 核心內容區域：直接將匿名留言板單獨提取作為主面板，移除 Tabs 切換結構 -->
             <div class="p-4">
-                <div class="bbs-stream d-flex flex-column gap-3" style="max-height: 500px; overflow-y: auto; padding-right: 5px;">
+                <div class="bbs-stream d-flex flex-column gap-3" style="max-height: 500px; overflow-y: auto;">
 
                     <!-- 貼文：Vesper 警報 -->
                     <div class="post-card m-0" onclick="triggerComplaint('vesper')">
@@ -594,15 +594,17 @@
                         <div class="complaint-box" id="complaint-mufeng"></div>
                     </div>
 
-                    <!-- 貼文：幽冥燼廚房警告 -->
-                    <div class="post-card m-0" style="border-left: 4px solid #54a0ff;">
+                    <!-- 貼文：墮神宿醉事件 -->
+                    <div class="post-card m-0" onclick="triggerComplaint('cat_incident')">
                         <div class="post-meta mb-2 d-flex justify-content-between align-items-center">
-                            <span class="author" style="color: #54a0ff; font-weight: 500;"><i class="fas fa-fire me-1"></i> 異常能流監測組</span>
-                            <span class="badge text-bg-primary" style="font-size: 0.7rem;">#生命財產安全公告</span>
+                            <span class="author" style="color: var(--moan-purple);"><i class="fas fa-cat me-1"></i> 異端行為觀測組</span>
+                            <span class="badge bg-secondary">#特級管制觀測 #緊急尋人</span>
                         </div>
-                        <div class="post-content small" style="color: var(--text-primary); line-height: 1.5;">
-                            <strong>警告：</strong>若在時空異常任務中偶遇鄰家大哥哥裝扮、繫著圍裙的幽冥燼先生，請務必保持最高禮貌！千萬不要在他準備給沐風先生熬湯的時候打擾他。上次有個不長眼的迷途者試圖突襲他的廚房，被他微笑著用空間術法直接『打包』扔進了原初影界的魔獸聚集群裡……
+                        <div class="post-content small">
+                            誰把教廷特別版的「高純度聖水」當成礦泉水發給墨淵先生了？！他現在處於墮神宿醉狀態，變成一隻巨型緬因貓橫躺在局長辦公室門口吃魷魚乾！
+                            <span class="text-info d-block mt-2 small"><i class="fas fa-hand-pointer me-1 animate-blink"></i> [追蹤網安科與系統AI的連線攔截紀錄...]</span>
                         </div>
+                        <div class="complaint-box mt-3" id="complaint-cat_incident"></div>
                     </div>
 
                 </div>
