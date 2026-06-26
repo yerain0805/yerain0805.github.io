@@ -307,10 +307,13 @@ body {
 .bubble.mufeng { background: #1a242c; border: 1px solid #3498db; color: #b3d9ff; align-self: flex-start; }
 .bubble.youmingjin { background: #201a24; border: 1px solid var(--moan-purple); color: #e6ccff; align-self: flex-end; }
 .bubble.bonnie { background: #372d36; border: 1px solid #e1a2aa; color: #fcdfd9; align-self: flex-start; }
-.bubble.cyber { background: #253045; border: 1px solid #00c6e6; color: #bfe0d1; align-self: flex-start; }
-.bubble.ai-system { background: #242526; border: 1px dashed #54a0ff; color: #54a0ff; align-self: flex-start; }
-.bubble.agent-09 { background: #242526; border: 1px solid var(--accent-amber); color: #b0b3b8; align-self: flex-start; opacity: 0.9; box-shadow: 0 0 8px rgba(214, 175, 55, 0.1);}
+.bubble.mufeng { background: #1a242c; border: 1px solid #3498db; color: #b3d9ff; align-self: flex-start; }
+.bubble.logistics { background: #242526; border: 1px dashed var(--accent-amber); color: #b0b3b8; align-self: flex-start; opacity: 0.9; box-shadow: 0 0 8px rgba(214, 175, 55, 0.1);}
+.bubble.sming { background: #201a24; border: 1px solid var(--moan-purple); color: #e6ccff; align-self: flex-end; }
 .bubble.senior-a { background: #242526; border: 1px dashed var(--accent-amber); color: #b0b3b8; align-self: flex-start; opacity: 0.9; box-shadow: 0 0 8px rgba(214, 175, 55, 0.1);}
+.bubble.cyber { background: #1a242c; border: 1px solid #00c6e6; color: #68cfeb; align-self: flex-start; }
+.bubble.agent-09 { background: #242526; border: 1px dashed var(--accent-amber); color: #b0b3b8; align-self: flex-start; opacity: 0.9; box-shadow: 0 0 8px rgba(214, 175, 55, 0.1);}
+.bubble.ai-system { background: #1a242c; border: 1px dashed #54a0ff; color: #54a0ff; align-self: flex-end; }
 
 @keyframes popIn {
     from { opacity: 0; transform: scale(0.92) translateY(8px); }
