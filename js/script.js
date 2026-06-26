@@ -36,7 +36,7 @@ const complaintDatabase = {
     ]
 };
 
-// 2. 觸發吐槽彈出視窗的核心函式 (明確掛載到 window，確保 HTML 的 onclick 絕對讀得到)
+// 點擊展開對話控制
 window.triggerComplaint = function(id) {
     const container = document.getElementById(`complaint-${id}`);
     if (!container) {
