@@ -306,7 +306,8 @@ body {
 .bubble.miaoyou { background: #2c221a; border: 1px solid var(--miaoyou-orange); color: #ffd1b3; align-self: flex-end; }
 .bubble.mufeng { background: #1a242c; border: 1px solid #3498db; color: #b3d9ff; align-self: flex-start; }
 .bubble.youmingjin { background: #201a24; border: 1px solid var(--moan-purple); color: #e6ccff; align-self: flex-end; }
-.bubble.bonnie { background: #22251a; border: 1px solid #9acd32; color: #e2f4c5; align-self: flex-start; }
+.bubble.bonnie { background: #372d36; border: 1px solid #e1a2aa; color: #fcdfd9; align-self: flex-start; }
+
 .bubble.senior-a {
     background: #242526;
     border: 1px dashed var(--accent-amber);
