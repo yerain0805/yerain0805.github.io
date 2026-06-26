@@ -771,3 +771,35 @@ body.bammie-hacked-mode .navbar-brand {
 .progress-bar-animated {
     transition: width 0.1s linear;
 }
+/* 化工贗品引發的「草莓草泥馬/視覺污染懲罰」模式 */
+body.alpaca-punish-mode {
+    --bg-dark: #ff65a3 !important;       /* 變為高飽和芭比粉 */
+    --bg-terminal: #ff1493 !important;   /* 深粉 */
+    --card-bg: #fff0f5 !important;       /* 淺粉卡片底 */
+    --border-color: #ff007f !important;
+    --text-primary: #fb80c0 !important;
+    --accent-amber: #ff007f !important;
+    animation: alpacaDance 3s ease-in-out infinite alternate; /* 全網頁開始微微扭動扭跳舞 */
+}
+
+body.alpaca-punish-mode::after {
+    content: "🍓🦙 兔子 Bammie 憤怒警告：嚴禁攜帶人工香精贗品！ 🦙🍓";
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #ff007f;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    z-index: 10000;
+}
+
+/* 網頁微微扭動跳舞的動態效果 */
+@keyframes alpacaDance {
+    0% { transform: scale(1) rotate(0deg); }
+    50% { transform: scale(1.005) rotate(0.2deg); }
+    100% { transform: scale(1) rotate(-0.2deg); }
+}

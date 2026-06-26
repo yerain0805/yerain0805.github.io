@@ -154,86 +154,97 @@ window.addEventListener('DOMContentLoaded', () => {
 function initBammieEasterEgg() {
     const bunnyBtn = document.getElementById('bammie-hacker-bunny');
     const overlay = document.getElementById('bammie-popup-overlay');
-    const feedBtn = document.getElementById('btn-feed-strawberry');
 
-    if (!bunnyBtn || !overlay || !feedBtn) return;
+    if (!bunnyBtn || !overlay) return;
 
+    // 1. 連擊 5 下觸發 Bammie 駭客模式
     let clickCount = 0;
-    let clickTimeout;
-
     bunnyBtn.addEventListener('click', () => {
         clickCount++;
-
-        // 畫面上震動提示，暗示玩家發現了可疑按鈕
-        bunnyBtn.style.transform = `scale(1.2) rotate(${clickCount % 2 === 0 ? 15 : -15}deg)`;
-        setTimeout(() => { bunnyBtn.style.transform = ''; }, 150);
-
-        // 重置連續點擊時間差計時器（必須在 3 秒內點完 5 次才算成就）
-        clearTimeout(clickTimeout);
-        clickTimeout = setTimeout(() => {
-            clickCount = 0;
-        }, 3000);
-
-        // 達成 5 次點擊成就，啟動侵入！
         if (clickCount === 5) {
             clickCount = 0;
-            triggerBammieHack();
+            document.body.classList.remove('alpaca-punish-mode'); // 清除舊懲罰
+            document.body.classList.add('bammie-hacked-mode');   // 進入草莓粉黑化
+            overlay.style.display = 'flex';
+
+            // 動態改寫大彈窗裡面的按鈕區，多塞一個「化工贗品」選項來坑使用者
+            const bodyContainer = overlay.querySelector('.bammie-box-body');
+            bodyContainer.innerHTML = `
+                <h4 class="fw-bold mb-3" style="color: #ffb6c1;">【 隱藏成就：直視時空之力 】</h4>
+                <p class="small text-start mb-4" style="color: #efeada; font-family: monospace;">
+                    &gt; Bammie: 「知識不該被封鎖。如果覺得這個『草莓賽博兔』介面太刺眼，請拿『真正的草莓大福』來跟我交換解鎖代碼吧？」
+                </p>
+                <div class="d-flex flex-column gap-2">
+                    <button id="btn-feed-real" class="btn btn-strawberry w-100 fw-bold py-2">🍓 投餵【真正的高級有機草莓大福】</button>
+                    <button id="btn-feed-fake" class="btn btn-outline-danger w-100 fw-bold py-2" style="font-size:0.85rem; border-color:#ffb6c1; color:#ffb6c1;">⚠️ 投餵【路邊買的化工香精草莓大福】</button>
+                </div>
+            `;
+
+            // 重新綁定兩個按鈕的事件
+            document.getElementById('btn-feed-real').addEventListener('click', () => startQuantumScan(true));
+            document.getElementById('btn-feed-fake').addEventListener('click', () => startQuantumScan(false));
         }
     });
 
-    // 觸發入侵：篡改主體變數，開啟警告彈窗
-    function triggerBammieHack() {
-        document.body.classList.add('bammie-hacked-mode');
-        overlay.style.display = 'flex';
-        console.warn("⚠️ S.C.A. ALERT: Unauthorized code block injected by 'Bammie'.");
-    }
-
-    // 解除入侵：投餵草莓大福（沉浸式 Gamification 升級版）
-    feedBtn.addEventListener('click', () => {
+    // 2. 核心大福量子掃描程序
+    function startQuantumScan(isRealAlpaca) {
         const scanModal = document.getElementById('bammie-scanning-modal');
         const progressBar = document.getElementById('scan-progress-bar');
         const statusText = document.getElementById('scan-status-text');
 
-        if (!scanModal || !progressBar || !statusText) {
-            // 防呆：如果抓不到新組件，就執行原本的直接解除
-            overlay.style.display = 'none';
-            document.body.classList.remove('bammie-hacked-mode');
-            return;
-        }
-
-        // 1. 隱藏原本的駭客大視窗，彈出「掃描中」小視窗
         overlay.style.display = 'none';
         scanModal.style.display = 'flex';
 
         let progress = 0;
         progressBar.style.width = '0%';
-        statusText.innerText = "> 偵測到有機物接近...啟動質譜儀掃描...";
+        progressBar.className = "progress-bar bg-success"; // 重置顏色
+        statusText.innerText = "> 偵測到有機物接近...啟動時空質譜儀掃描...";
 
-        // 2. 模擬黑客程式在動態分析大福
         const scanInterval = setInterval(() => {
             progress += 5;
             progressBar.style.width = `${progress}%`;
 
-            // 根據進度條顯示超好玩的黑客反饋文案
-            if (progress === 30) {
-                statusText.innerText = "> [✓] 糖分含量 42% 檢測通過。符合蓓妮特調標準。";
-            } else if (progress === 60) {
-                statusText.innerText = "> [✓] 糯米皮Q彈度達標。偵測到整顆新鮮大草莓！";
-            } else if (progress === 90) {
-                statusText.innerText = "> [STATUS] 權限解鎖成功。正在撤回『草莓視覺污染』模組...";
+            if (isRealAlpaca) {
+                // === 路線 A：真大福的超讚文案 ===
+                if (progress === 20) {
+                    statusText.innerText = "> [✓] 糖分含量 42% 檢測通過。符合蓓妮特調標準。";
+                } else if (progress === 50) {
+                    statusText.innerText = "> [✓] 糯米皮 Q 彈度達標。偵測到整顆新鮮大草莓！";
+                } else if (progress === 85) {
+                    statusText.innerText = "> [STATUS] 權限解鎖成功。正在撤回『草莓視覺污染』模組...";
+                }
+            } else {
+                // === 路線 B：化工贗品的崩潰文案 ===
+                if (progress === 20) {
+                    progressBar.className = "progress-bar bg-danger"; // 進度條變紅警告
+                    statusText.innerText = "> [❌] 警告：超標人工香精二級預警！非法化學分子殘留！";
+                } else if (progress === 50) {
+                    statusText.innerText = "> [❌] 偵測不到草莓基因！糯米皮黏稠度極其低劣！";
+                } else if (progress === 85) {
+                    statusText.innerText = "> [🚨] Bammie 感到極度憤怒。正在將懲罰代碼寫入網頁底層...";
+                }
             }
 
-            // 3. 掃描完成，正式功德圓滿，恢復系統！
+            // 3. 掃描完成
             if (progress >= 100) {
                 clearInterval(scanInterval);
                 setTimeout(() => {
-                    scanModal.style.display = 'none'; // 關閉掃描視窗
-                    document.body.classList.remove('bammie-hacked-mode'); // 解除全站粉紅污染
-                    alert("🎉 [S.C.A. 系統提示]: 危機解除。防火牆已重啟，技術科的草莓警報已撤銷。謝謝您的投餵！");
+                    scanModal.style.display = 'none';
+
+                    if (isRealAlpaca) {
+                        // 功德圓滿，全站恢復正常
+                        document.body.classList.remove('bammie-hacked-mode');
+                        alert("🎉 [S.C.A. 系統提示]: 危機解除。防火牆已重啟，技術科的草莓警報已撤銷。謝謝您的投餵！");
+                    } else {
+                        // 觸發草莓草泥馬懲罰模式！
+                        document.body.classList.remove('bammie-hacked-mode');
+                        document.body.classList.add('alpaca-punish-mode');
+                        alert("🚨 [S.C.A. 網絡安全科警告]: 偵測到您試圖用化工贗品敷衍活了 500 年的前天界副族長！懲罰協議已生效，全域介面已強制替換為『跳舞的草莓草泥馬』模組，持續到您下次重新整理網頁為止！");
+                    }
                 }, 600);
             }
-        }, 150); // 每 150 毫秒跑 5%，大約 3 秒掃描完成
-    });
+        }, 150);
+    }
 }
 
 // 註冊到現有的 DOMContentLoaded 監聽器中
