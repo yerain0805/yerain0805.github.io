@@ -16,7 +16,7 @@
     --accent-amber: #d4af37;     /* 秩序之光金 */
     --accent-warning: #ff3b30;   /* Vesper Alarm 警報紅 */
     --vesper-red: #8b0000;       /* Vesper 深紅 */
-    --miaoyou-orange: #ff6700;   /* 喵優橘 */
+    --miaoyou-orange: #ff6700;   /* 喵幽橘 */
     --mufeng-gold: #d4af37;      /* 沐風金 */
     --bonnie-pink: #ffb6c1;      /* 蓓妮粉 */
     --moan-purple: #9370db;      /* 莫蘭迪紫/墨淵紫 */
@@ -304,15 +304,15 @@ body {
 /* 吐槽對話框色彩集成 */
 .bubble.vesper { background: #2c1a1a; border: 1px solid var(--vesper-red); color: #ffb3b3; align-self: flex-start; }
 .bubble.miaoyou { background: #2c221a; border: 1px solid var(--miaoyou-orange); color: #ffd1b3; align-self: flex-end; }
-.bubble.mufeng { background: #1a242c; border: 1px solid #3498db; color: #b3d9ff; align-self: flex-start; }
-.bubble.youmingjin { background: #201a24; border: 1px solid var(--moan-purple); color: #e6ccff; align-self: flex-end; }
-.bubble.bonnie { background: #372d36; border: 1px solid #e1a2aa; color: #fcdfd9; align-self: flex-start; }
-.bubble.mufeng { background: #1a242c; border: 1px solid #3498db; color: #b3d9ff; align-self: flex-start; }
-.bubble.logistics { background: #242526; border: 1px dashed var(--accent-amber); color: #b0b3b8; align-self: flex-start; opacity: 0.9; box-shadow: 0 0 8px rgba(214, 175, 55, 0.1);}
-.bubble.sming { background: #201a24; border: 1px solid var(--moan-purple); color: #e6ccff; align-self: flex-end; }
-.bubble.senior-a { background: #242526; border: 1px dashed var(--accent-amber); color: #b0b3b8; align-self: flex-start; opacity: 0.9; box-shadow: 0 0 8px rgba(214, 175, 55, 0.1);}
+.bubble.mufeng { background: #2e291b; border: 1px solid var(--mufeng-gold); color: #ecdcab; align-self: flex-start; }
+.bubble.youmingjin { background: #1a242c; border: 1px solid var(--youmingjin-blue); color: #b3d9ff; align-self: flex-end; }
+.bubble.moyuan { background: #201a24; border: 1px solid var(--moan-purple); color: #e6ccff; align-self: flex-start; }
+.bubble.bonnie { background: #372d36; border: 1px solid var(--bonnie-pink); color: #fcdfd9; align-self: flex-start; }
+.bubble.sming { background: #1a2c20; border: 1px solid #2ecc71; color: #d4edda; align-self: flex-end; }
+.bubble.logistics{ background: #242526; border: 1px dashed var(--text-muted); color: #b0b3b8; align-self: flex-start; opacity: 0.9; }
+.bubble.senior-a { background: #242526; border: 1px dashed var(--text-muted); color: #b0b3b8; align-self: flex-start; opacity: 0.9; }
 .bubble.cyber { background: #1a242c; border: 1px solid #00c6e6; color: #68cfeb; align-self: flex-start; }
-.bubble.agent-09 { background: #242526; border: 1px dashed var(--accent-amber); color: #b0b3b8; align-self: flex-start; opacity: 0.9; box-shadow: 0 0 8px rgba(214, 175, 55, 0.1);}
+.bubble.agent-09 { background: #242526; border: 1px dashed var(--text-muted); color: #b0b3b8; align-self: flex-start; opacity: 0.9; }
 .bubble.ai-system { background: #1a242c; border: 1px dashed #54a0ff; color: #54a0ff; align-self: flex-end; }
 
 @keyframes popIn {
